@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+    List<GameInfoMinModel> Games = ViewBag.Games;
+
+}
+
+    <table id="GamesInfoTable" class="table">
+        <thead class="thead-dark ">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Cash</th>
+                <th scope="col">Time</th>
+                <th scope="col">Max Players</th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < Games.Count; i++)
+            {
+
+            <tr>
+                <th scope="row">@(i + 1)</th>
+                <td><img src="~/resources/Cat_monet64.png" style="height:50px;width:50px" />@Games[i].Rate</td>
+                <td><img src="~/resources/Cat_monet64.png" style="height:50px;width:50px" />@Games[i].Cash</td>
+                <td>@Games[i].Time</td>
+                <td>@Games[i].MaxPlayers</td>
+                <td>@Html.ActionLink("Open", "Game", "Home", new { GameID = i }, new { id = "---", @class = "btn btn-success" })</td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+
+
+<script>
+    function OpenGame(id) {
+        console.log("open game = " + id);
+       
+    }
+</script>

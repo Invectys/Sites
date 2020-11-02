@@ -1,0 +1,42 @@
+﻿
+@model Lottery.Models.UsersListViewModel
+
+@{
+    ViewBag.Title = "Users catalog";
+}
+    <link href="~/css/FindUserPage.css" rel="stylesheet" />
+
+<div id="MainFindPageBlock">
+    <h2 id="Title-002">Users list</h2>
+
+    <form id="FindUserPageForm" method="get">
+        <div class="form-inline form-group">
+
+           
+            @Html.TextBox("name", Model.Name, htmlAttributes: new { @class = "form-control w-50" })
+
+            <input id="FindbyNameInputField" type="submit" value="Find" class="btn btn-default" />
+        </div>
+    </form>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Login</th>
+            <th>Mail</th>
+        </tr>
+
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                <td>
+                    <a href="/Identity/Account/Manage?login=@item.UserName"> @Html.DisplayFor(modelItem => item.UserName)</a>
+                   
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+               
+            </tr>
+        }
+    </table>
+</div>

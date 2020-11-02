@@ -1,0 +1,103 @@
+﻿.DynamicBlock {
+    cursor: move;
+    position: absolute;
+    z-index: 0;
+}
+
+    .DynamicBlock #Main, #Main * {
+        box-shadow: rgb(0, 0, 0) 30px 30px 80px 20px;
+        height: inherit;
+        width: inherit;
+        position: relative;
+    }
+
+    .DynamicBlock:hover {
+        z-index: 1;
+    }
+
+.photo {
+    width: 300px;
+    height: 500px;
+    overflow: visible;
+}
+
+
+.note {
+    height: 200px;
+    width: 200px;
+}
+
+    .note #Main {
+        background-color: aqua;
+        background-image: url(https://ds05.infourok.ru/uploads/ex/1214/0003bb93-a0b5db94/hello_html_m684326d0.jpg);
+        overflow: scroll;
+    }
+
+.video #Main {
+    background-color: black;
+}
+
+.pols {
+    width: 50px;
+    height: 50px;
+    border: 10px solid blue;
+    float: right;
+    margin-top: -25px;
+    margin-right: -25px;
+    position: relative;
+}
+
+
+
+/* Hidden by default, selectively shown. 
+       At this point this is how a skin designer would show them. */
+.video #Main video .vjs-current-time {
+    display: block;
+}
+
+.video #Main video .vjs-time-divider {
+    display: block;
+}
+
+.video #Main video .vjs-duration {
+    display: block;
+}
+
+.video #Main video .vjs-mute-control {
+    display: block;
+}
+
+.video #Main video .vjs-volume-control {
+    display: block;
+}
+
+/* Could be broken. Can't find what's supposed to show it now */
+.video #Main video .vjs-live-control {
+    display: block;
+}
+
+/* Programmatically hidden with vjs-hidden when no tracks */
+.video #Main video .vjs-chapters-button {
+    display: block !important;
+}
+
+.video #Main video .vjs-subtitles-button {
+    display: block !important;
+}
+
+.video #Main video .vjs-captions-button {
+    display: block !important;
+}
+
+/* Hidden with state classes */
+.video #Main video .vjs-control-bar {
+    display: flex;
+}
+
+.video #Main video.vjs-has-started .vjs-big-play-button {
+    display: block;
+}
+
+
+
+

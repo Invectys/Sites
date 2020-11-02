@@ -1,0 +1,212 @@
+﻿@using Lottery.Models.PartialViewModels
+@model PartialModel
+
+
+<style>
+    .ul--0 {
+        -webkit-column-count: 3;
+        -webkit-column-gap: 20px;
+        -moz-column-count: 3;
+        -moz-column-gap: 20px;
+        column-count: 3;
+        column-gap: 20px;
+        text-align: justify;
+    }
+
+        .ul--0 li {
+            width: 100%;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+            .ul--0 li a img,
+            .ul--0 li a {
+                width: inherit;
+            }
+
+                .ul--0 li a span {
+                    display: block;
+                }
+</style>
+
+
+
+@switch (Model.Action)
+{
+    case ModalAction.LoadImage:
+        {
+
+           
+            <link href="~/css/LoadImageModal.css" rel="stylesheet" />
+           
+            <!-- Модальное окно загрузки картинки-->
+            <div class="modal fade" id="@Model.ModalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel">Load image</h4>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <input type="file" id="CustomFile" value="Load image" />
+
+                            <div id="ImageSettingsBlock">
+
+                                <div id="SelectFrame" class=""></div>
+
+                                <img id="PreviewImage"  />
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="modal-footer">
+                            
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="modal fade" id="@Model.ModalId-ImageGalary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>ImageGalary</h3>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        <div class="modal-body">
+                            <button id="LoadNewFile-btn" class="btn btn-primary" onclick="LoadImage.OpenModal()">Load new file</button>
+                            <button id="CommunityGalaryOpen-btn" class="btn btn-primary" onclick="LoadImage.UpdateGalary('FromCommunity')">Community</button>
+                            <button id="PersonalGalaryOpen-btn" class="btn btn-primary" onclick="LoadImage.UpdateGalary('FromGalary')">My</button>
+                            <ul id="Image--0_0" class="ul--0"></ul>
+
+
+                        </div>
+                        <div class="modal-footer">
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            break;
+        }
+
+
+
+    case ModalAction.LoadFile:
+
+        
+        <link href="~/css/LoadFileModal.css" rel="stylesheet" />  
+        
+       
+
+        <!-- Модальное окно загрузки файла-->
+        <div class="modal fade" id="@Model.ModalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Load file</h4>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+
+                    </div>
+
+                    <div class="modal-body">
+
+                        <input type="file" id="CustomFile" value="Load File" />
+
+                        <div id="FileSettingsBlock">
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="@Model.ModalId-FileGalary" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Galary</h3>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="modal-body">
+                        <button id="LoadNewFile-btn" class="btn btn-primary" onclick="LoadFile.OpenModal()">Load new file</button>
+                        <button id="CommunityGalaryOpen-btn" class="btn btn-primary" onclick="LoadFile.UpdateGalary('FromCommunity')">Community</button>
+                        <button id="PersonalGalaryOpen-btn" class="btn btn-primary" onclick="LoadFile.UpdateGalary('FromGalary')">My</button>
+                        <ul id="Image--1_0" class="ul--0"></ul>
+
+
+                    </div>
+                    <div class="modal-footer">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        break;
+
+    case ModalAction.Video:
+    
+        
+        <!-- Модальное окно выбора видео-->
+        <div class="modal fade" id="@Model.ModalId" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Link</h4>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                    
+                    <div class="modal-body">
+
+                        <input type="text" id="CustomPath" value="https://www.bbc.com/russian" style="width: 100%;"/>
+
+                        <div id="FileSettingsBlock">
+                            
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="modal-footer">
+                        
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        break;
+
+
+}
+
+
+
+
+
+

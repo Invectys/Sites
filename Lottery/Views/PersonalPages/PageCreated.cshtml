@@ -1,0 +1,24 @@
+﻿@using Lottery.Models.Enums
+@model Lottery.Models.ViewModels.PageCreatedViewModel
+@{
+
+}
+
+@switch (Model.result)
+{
+    case CreatePageResult.OK:
+        <text>Page created</text>
+        <a href="~/@User.Identity.Name/@Model.PageName"></a>
+        break;
+    case CreatePageResult.PageExist:
+        <text>Page already exist!</text>
+        <a href="~/@User.Identity.Name/@Model.PageName"></a>
+        break;
+
+
+
+    default:
+        
+        break;
+}
+            

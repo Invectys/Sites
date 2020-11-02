@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Этот файл используется процессом публикации или упаковки вашего веб-проекта. Можно настроить поведение этого процесса,
+изменив этот файл MSBuild. Подробности см. на странице https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAw0U2NOP0YkmhlKUf0bKXeAAAAAACAAAAAAAQZgAAAAEAACAAAABAGOp2sodc7K4e5HIObBuNYohXsoS7rlWHOtHvRSGsBQAAAAAOgAAAAAIAACAAAABnWKPhJ0/bXba0AHtOt1crNUxVzXFlfNEG/rm+NSJPqSAAAAD4FZLVTXcjZ+FujlqlORyGqR0HIa3P9FOPqx1PWV1QkUAAAADh9zBZeD2JYdUTkXkEHtyLmAT+BOYRGFN7gMx1BHL9p2B+UdrLZrDtMva9PIfTxQnD/NrD10jMat2nwMXSQJFX</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DedicatedSQL">
+      <Value>Data Source=u0727927.plsk.regruhosting.ru%3b Database=u0727927_Main%3b Integrated Security=False%3bUser ID=u0727927_InvectysPlesk%3bPassword=UIop89_woieprt</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

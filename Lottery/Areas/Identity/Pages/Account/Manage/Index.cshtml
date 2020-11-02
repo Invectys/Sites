@@ -1,0 +1,59 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+
+
+    <div class="row justify-content-center">
+
+        @if (Model.Owner)
+        {
+            <div class="col-4">
+
+                <div class="btn-group">
+                    <form class="btn " asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+
+                    <a class="btn btn-primary" asp-page="ChangePassword">Change Password</a>
+                    @if (User.IsInRole("admin"))
+                    {
+                        <a asp-action="Index" asp-controller="Admin" class="btn btn-primary">Admin panel</a>
+                    }
+                </div>
+            </div>
+        }
+        
+
+    <div class="col-6">
+        @if (Model.Owner)
+        {
+            <form method="post" asp-controller="PersonalPages" asp-action="CreatePage">
+                <input type="text" name="Name"/>
+                <button type="submit">Create New Page</button>
+            </form>
+        }
+
+    <ul class="list-group">
+        @foreach (var name in Model.Pages)
+        {
+            <li class="list-group-item"><a href="~/@Model.Username/@name">@name</a></li>
+        }
+    </ul>
+        
+
+
+    </div>
+
+    </div>
+
+
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

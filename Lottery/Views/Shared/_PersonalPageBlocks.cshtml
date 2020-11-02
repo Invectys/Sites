@@ -1,0 +1,171 @@
+﻿
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="~/css/PersonalBlocks.css" rel="stylesheet" />
+
+<div id="Templates" style="display:none">
+
+
+
+    @* 1 template (with photo,title,post) *@
+    <div id="OneBlockTemplate" class="col-md-auto ForOwner" style="padding: 0px 0px 0px 0px">
+        <div class="box">
+            <img id="Photo" class="Transform" src="http://bootstraptema.ru/images/demo/600x600/demo1.jpeg" alt="1">
+            <div class="box-content">
+               
+                <h3 id="Title" class="title">Title</h3>
+                <input id="TitleInput" type="text" class="form-control" style="display:none" />
+
+                <span id="Post" class="post">Post</span>
+                <textarea id="PostInput" type="text" class="form-control" style="display:none"></textarea>
+
+
+            </div>
+            <ul class="icon">
+                @*<li><a id="OneSection" href="#"><i class="fa fa-search"></i></a></li>*@
+
+                <li><a id="TwoSection" href="#"><i class=""></i></a></li>
+
+                <li class="li_EditBlockMenu">
+                    <a onclick="OpenEditBlockMenu(this)" style="cursor:pointer">
+                        <i class=""><img src="~/resources/icons/ellipsis.png" /></i>
+                    </a>
+                </li>
+
+                <li class="li_MoveBlockButton">
+                    <a onclick="TransformEvent(this)">
+                        <i class=""><img src="~/resources/icons/move-option.png" /></i>
+                    </a>
+                </li>
+
+                <li class="li_DeleteBlock">
+                    <a  onclick="DeleteBlockEvent(this)">
+                        <i><img src="~/resources/icons/rubbish-bin.png" /></i>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+    @* 2 template (clear) *@
+    <div id="TwoBlockTemplate" class="col-md-auto list-block ForOwner">
+        <div class="box">
+
+            <div id="Content" class="Transform">
+
+                <text id="Post">write</text>
+                <textarea id="PostInput" style="display:none; width: 100%;overflow:scroll;resize: none;height: 100%;"></textarea>
+
+
+            </div>
+            <ul class="icon">
+
+                <li class="li_EditBlockMenu">
+                    <a onclick="OpenEditBlockMenu(this)" style="cursor:pointer">
+                        <i><img src="~/resources/icons/ellipsis.png" /></i>
+                    </a>
+                </li>
+
+                <li class="li_MoveBlockButton">
+                    <a onclick="TransformEvent(this)">
+                        <i class=""><img src="~/resources/icons/move-option.png" /></i>
+                    </a>
+                </li>
+
+                <li class="li_DeleteBlock">
+                    <a onclick="DeleteBlockEvent(this)">
+                        <i class=""><img src="~/resources/icons/rubbish-bin.png" /></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    @* 1 template (with photo,title,post) *@
+    <div id="OneBlockTemplate_Guest" class="col-md-auto " style="padding: 0px 0px 0px 0px">
+        <div class="box">
+            <img id="Photo" class="Transform" src="http://bootstraptema.ru/images/demo/600x600/demo1.jpeg" alt="1">
+            <div class="box-content">
+                <h3 id="Title" class="title">Title</h3>
+               
+                <input id="TitleInput" type="text" class="form-control" style="display:none" />
+
+                <span id="Post" class="post">Post</span>
+                <textarea id="PostInput" type="text" class="form-control" style="display:none"></textarea>
+            </div>
+            <ul class="icon">
+
+                @*<li><a id="OneSection" href="#"><i class="fa fa-search"></i></a></li>*@
+
+
+
+            </ul>
+        </div>
+    </div>
+
+
+    @* 2 template (clear) *@
+    <div id="TwoBlockTemplate_Guest" class="col-md-auto list-block ForGuest">
+        <div class="box">
+
+            <div id="Content" class="Transform">
+
+                <text id="Post">write</text>
+                <textarea id="PostInput" style="display:none; width: 100%;overflow:scroll;resize: none;height: 100%;"></textarea>
+
+
+            </div>
+            <ul class="icon"></ul>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+
+    function OpenEditBlockMenu(block) {
+        //console.log("Open Edit Menu for ", block);
+        SlideBar.ChangeType("EditBlockMenu", $(block).parents(".DynamicBlock"));
+
+
+    }
+
+    function TransformEvent(r) {
+        var block = r;
+
+        console.log("TransformBlockEvent click");
+        $main = $(block).parents(".DynamicBlock");
+
+        if ($BlockForTransform.is($main)) {
+            HideEditBlockFrame();
+            ClearEditBlockFrame();
+        } else {
+            WearBlockinFrame($main);
+            ShowEditBlockFrame();
+        }
+    }
+
+    function DeleteBlockEvent(e) {
+        
+        var block = e;
+        console.log("DeleteBlockEvent click");
+        $main = $(block).parents(".DynamicBlock");
+        DeleteBlock($main.attr("id"));
+        
+    }
+
+
+</script>
+
+@section Scripts
+{
+    <script src="~/js/2_Arhitecture/EditBlockFrameScriptt.js"></script>
+
+    
+}
+

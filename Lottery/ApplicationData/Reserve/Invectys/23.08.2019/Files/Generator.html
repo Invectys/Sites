@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
+<script type="text/javascript" src="http://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="http://bootstraptema.ru/plugins/2015/b-v3-3-6/bootstrap.min.js"></script>
+<script src="http://bootstraptema.ru/_sf/3/334.js" type="text/javascript"></script>
+
+<br><br><br><br><br><br><br><br><br>
+
+<div class="container">
+<div class="row">
+
+<div id="qrGenerator" class="col-xs-12">
+<h1 class="text-center">QR Генератор</h1>
+
+<div id="settings" class="col-md-6">
+
+
+<div class="form-group">
+<div class="input-group input-group-sm col-sm-12">
+<span class="input-group-addon">Ширина QR</span>
+<input type="text" id="qrWidth" class="form-control" value="210" placeholder="210">
+</div>
+</div>
+
+<div class="form-group">
+<div class="input-group input-group-sm col-sm-12">
+<span class="input-group-addon">Высота QR</span>
+<input type="text" id="qrHeight" class="form-control" value="210" placeholder="210">
+</div>
+</div>
+
+
+<div class="form-group">
+<div class="input-group input-group-sm col-sm-12">
+<span class="input-group-addon">Цвет QR кода</span>
+<input type="text" id="qrColor" class="form-control" value="#000000">
+</div>
+</div>
+
+<div class="form-group">
+<div class="input-group input-group-sm col-sm-12">
+<span class="input-group-addon">Фон QR кода</span>
+<input type="text" id="qrBgColor" class="form-control" value="#FFFFFF">
+</div>
+</div>
+
+<div class="form-group">
+<div class="input-group input-group-sm col-sm-12">
+<span class="input-group-addon">QR информация</span>
+<input type="text" id="qrUrl" class="form-control" value="BootstrapТема" placeholder="BootstrapТема">
+</div>
+</div>
+
+<input id="generate" class="btn btn-default btn-block" type="submit" value="Сделать" />
+
+</div>
+
+<div class="col-md-6" id="generateCell">
+<br>
+<div id="qr"><div class="bg"></div><canvas></canvas></div>
+</div>
+</div>
+<div class="clearfix"></div>
+
+<script>
+$(function () {
+$('#generate').click(function () {
+$('#qr .bg').empty().qrcode({
+width: $('#qrWidth').val(),
+height: $('#qrHeight').val(),
+color: $('#qrColor').val(),
+bgColor: $('#qrBgColor').val(),
+text: $('#qrUrl').val()
+});
+$('#qr .bg').css({ background: $('#qrBgColor').val()});
+});
+});
+</script>
+
+</div>
+</div>

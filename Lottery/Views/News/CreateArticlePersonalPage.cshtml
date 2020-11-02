@@ -1,0 +1,165 @@
+﻿@using Lottery.Models.PartialViewModels
+@model CreateArticleModel
+@{
+    ViewData["Title"] = "Posts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    PartialModel ModalModel = new PartialModel("myModal",ModalAction.LoadImage);
+}
+<script>
+    var NowWeek = @ViewBag.NowWeek;
+
+     
+
+</script>
+
+
+<style>
+    #BackGround {
+        background-color: white;
+    }
+</style>
+
+<div id="BackGround" class="rounded">
+
+
+    <h2>Create your min article </h2>
+
+
+    <form asp-antiforgery="true" asp-action="CreateArticle" asp-controller="News" name="ArticleForm" enctype="multipart/form-data">
+
+        <partial name="_ModalPage" model="ModalModel" />
+
+
+        <div class="validation text-danger" asp-validation-summary="All"></div>
+
+        <input  name="Personal" type="hidden" value="true" />
+
+        <input id="JSONImageData" name="JSONImageData" type="hidden" />
+        <input id="JSONArticleData" name="JSONArticleData" type="hidden" />
+        @*<input id="Image" name="Img" asp-for="Img" type="file" style="visibility:collapse"/>*@
+
+        <div class="article row " style="overflow:hidden; height:33vh">
+
+            @* Image *@
+            <div class="col-md-7" style="overflow:hidden">
+                <div style="max-height:300px;max-width:700px;overflow:hidden">
+                    <img id="article-img" class="rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+                </div>
+            </div>
+
+
+            <div class="col-md-5">
+
+                @* Title *@
+                <h3 id="Title">
+                    @if (Model?.Title == null)
+                    {
+                        <text>Click here to set title </text>
+                    }
+                    else
+                    {
+                        @Model.Title
+                    }
+                </h3>
+
+                <input id="TextArea_Title" asp-for="Title" type="text" class="form-control" style="display:none" />
+
+
+                <div id="MainInformationBlock" style="overflow:hidden">
+                    <p id="Information">
+                        @if (Model?.Information == null)
+                        {
+                            <text>Click here to set info</text>
+                        }
+                        else
+                        {
+                            @Model.Information
+                        }
+                    </p>
+
+                    <textarea cols="50" rows="10" id="TextArea_Information" asp-for="Information"
+                              style="resize:none;display:none;overflow:hidden" class="form-control"
+                              placeholder="min information">
+
+                    </textarea>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <input id="CustomFileOut-1" name="Img" asp-for="Img" type="file" accept="image/jpg,image/png,image/jpeg" />
+
+
+
+        <input id="Submit" type="submit" style="visibility:collapse; height:0px; width:0px;" />
+    </form>
+
+    <hr>
+
+    
+
+
+    <div class="row">
+        <div class="col-md-10">
+            @*<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                    Image
+                </button>*@
+
+        </div>
+        <div class="col-md-2">
+            <input type="button" value="Create Article !" class="btn btn-lg btn-success" onclick="CreateArticle()" />
+        </div>
+
+    </div>
+
+
+    @*<div class="row">
+        <div class="col-md-1">
+            post in week <input type="number" min="0" onchange="ChoosePostWeek(this)" />
+        </div>
+
+
+         </div>*@
+
+</div>
+
+
+<script>
+   
+
+     function open_modal() {
+         var opt = {
+             bLoadImageInModal: false,
+             bSelectFrameValid: true,
+             SelectFrameHeight: '300px',
+             SelectFrameWidth: '700px',
+             OutImageInput: document.getElementById("CustomFileOut-1"),
+             $OutImageBlock: $("#article-img"),
+         };
+
+        OpenLoadImageModal('CreateArticle', opt);
+        };
+
+    $("#CustomFileOut-1").on("change", function () { open_modal(); });
+
+</script>
+
+@section Scripts{
+
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/DynamicInputFieldScript.js"></script>
+    <script src="~/js/LoadFileScript.js"></script>
+    <script src="~/js/ArticleCreatorScript.js"></script>
+
+}
+
+
+
+
+
+

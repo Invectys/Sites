@@ -1,0 +1,50 @@
+﻿@model ArticlesViewModel
+@{
+    ViewData["Title"] = "Posts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @if (Model == null)
+    {
+        <h1 class="my-4">
+            No offered posts
+        </h1>
+    }
+    else
+    {
+        @foreach (var article in Model.Articles)
+        {
+
+            <div class="article">
+                <partial name="_Article" model="article" />
+                <text class="text-danger">Creator: @article.User </text>
+                <text> offered: @article.OfferedDate </text>
+                <text> delay: @article.PostWeekDelay </text>
+                <text> result week: @article.PostWeek </text>
+
+                <a href="#" onclick="Share(this,@article.index,'@Url.Action("Share","News")')">Share</a>
+                <a href="#" onclick="Delete(this,@article.index,'@Url.Action("Delete","News")',0)">Delete</a>
+                <hr>
+            </div>
+
+        }
+    }
+
+
+</div>
+
+@if (Model.ViewModel.HasPreviousPage)
+{
+    
+    <a href="@Url.Action("OfferedArticles","News")?page=@(Model.ViewModel.PageNumber - 1)" class="btn btn-default btn">
+        Назад
+    </a>
+}
+
+<a href="@Url.Action("OfferedArticles","News")?page=@(Model.ViewModel.PageNumber + 1)" class="btn btn-default btn">
+    Вперед
+</a>
+
+
+<script src="~/js/ArticleControlScript.js"></script>

@@ -1,0 +1,110 @@
+﻿@using Lottery.App_Code;
+@using Lottery.Models.PartialViewModels;
+
+<script src="~/js/8_Data/PersonalPageData.js"></script>
+
+@{PartialModel partial = new PartialModel("ModalBox-LoadPhoto", ModalAction.LoadImage); }
+<partial name="_ModalPage" model="partial" />
+
+@{partial = new PartialModel("ModalBox-LoadFile", ModalAction.LoadFile); }
+<partial name="_ModalPage" model="partial" />
+
+@{partial = new PartialModel("ModalBox-LoadVideo", ModalAction.Video); }
+<partial name="_ModalPage" model="partial" />
+
+
+
+@* Подключенные файлы *@
+
+<link href="~/css/AdaptivePage.css" rel="stylesheet" />
+<link href="~/css/EditPageMenu.css" rel="stylesheet" />
+<link href="~/css/PersonPage.css" rel="stylesheet" />
+<link href="~/css/Effects.css" rel="stylesheet" />
+
+@using System.Xml.Linq;
+@inject Lottery.Other.FileControl fileControl;
+@{
+    Layout = "_PersonalPageLayout";
+    string person = ViewBag.person;
+    string pageName = ViewBag.page;
+    int likes = ViewBag.likes;
+    bool PageLiked = ViewBag.pageLiked;
+    //загружаем конфигурационный файл
+    XDocument xdoc = XDocument.Load(fileControl.getPagesConfigPath(person) + pageName + ".xml");
+
+
+    XElement pageXML = xdoc.Element("Page");
+    string bg = "url(" + pageXML.Attribute("background").Value + ");";
+
+}
+
+
+<style>
+        body
+        { 
+            background-repeat:no-repeat;
+            background-size: cover!important;
+            background: @bg;
+           
+        }
+</style>
+<div id="BlocksPlace">
+
+    <partial name="_EditBlockFrame" />
+</div>
+
+
+@{ SlideBarModel model = new SlideBarModel(); model.Owner = person; model.Likes = likes;model.PageLiked = PageLiked;model.PageName = pageName;}
+<partial name="_SlideBar" model="model" />
+
+<partial name="_PersonalPageBlocks" />
+
+
+
+@section Scripts
+{
+    
+    @Html._AddBlocks(pageXML)
+    
+    
+
+
+
+    <script src="~/js/7_Modal/ModalLoadImageClassScript.js">
+    </script>
+
+    <script src="~/js/7_Modal/ModalLoadFileClassScript.js">
+
+    </script>
+
+    <script src="~/js/7_Modal/ModalChooseVideoClassScript .js">
+
+    </script>
+
+    <script src="~/js/2_Arhitecture/SlideBarClassScript.js"></script>
+
+    <script>
+        var PageName = '@pageName';
+
+        LoadImage = new ModalLoadImageControl("ModalBox-LoadPhoto");
+        LoadFile = new ModalLoadFileControl("ModalBox-LoadFile");
+        LoadVideo = new ModalChooseVideoControl("ModalBox-LoadVideo");
+        SlideBar = new SlideBarClass();
+
+    </script>
+
+    <script src="~/js/5_Effects/confetti.js"></script>
+
+   
+}
+
+
+
+@*Test*@
+<script>
+
+    window.addEventListener('error', function (e) {
+        var error = e.error;
+        alert(error);
+    });
+</script>

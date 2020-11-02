@@ -1,0 +1,40 @@
+﻿
+@model IEnumerable<Lottery.Models.GameInfoModel>
+@{
+    ViewBag.Title = "Список пользователей";
+}
+
+<a asp-action="CreateGame">Add Game</a>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Rate</th>
+        <th>Time</th>
+        <th>MaxPlayers</th>
+        <th>MinPlayers</th>
+        <th></th>
+    </tr>
+
+    @foreach (var game in Model)
+    {
+        <tr>
+           
+            <td>@game.GameID</td>
+            <td>@game.Rate</td>
+            <td>@game.Time</td>
+            <td>@game.MaxPlayers</td>
+            <td>@game.MinPlayers</td>
+            <td>
+                <form asp-action="DeleteGame" asp-route-GameID="@game.GameID" method="post">
+                    <a class="btn btn-sm btn-primary" asp-action="EditGame" asp-route-GameID="@game.GameID">Edit</a>
+
+
+                    <button type="submit" class="btn btn-sm btn-danger">
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>

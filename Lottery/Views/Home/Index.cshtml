@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewData["Title"] = "Info";
+    //Layout = "";
+}
+
+<link href="~/css/index.css" rel="stylesheet" />
+
+
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div style="display:flex">
+        <div id="Select-List" class="row ">
+
+
+            @*<div class="col">
+                <img id="Home-open-btn" src="~/resources/icons/home.png" />
+            </div>*@
+
+            <div class="col">
+                <img id="Find-open-btn" src="~/resources/icons/searching-magnifying-glass.png" />
+            </div>
+            @*<div class="col">
+                    <img id="PersonalNews-open-btn"  src="~/resources/icons/newspaper.png" />
+
+                </div>*@
+
+            @*<div class="col-sm-4">
+                    <img id="Games-open-btn" class=" img" src="~/resources/icons/gamepad.png" />
+
+                </div>*@
+        </div>
+
+
+    </div>
+
+
+    @section Scripts{
+    <script>
+        $("#Home-open-btn").on("click", function () {
+
+        location.href = '/Home/Home';
+        });
+        $("#PersonalNews-open-btn").on("click", function () {
+
+        location.href = '/News';
+        });
+        $("#PersonalNews-open-btn").on("click", function () {
+
+        location.href = '/News';
+        });
+        $("#Games-open-btn").on("click", function () {
+
+        location.href = 'Home/Games';
+        });
+        $("#Find-open-btn").on("click", function () {
+
+        location.href = 'Home/Find';
+        });
+    </script>
+        
+    }
+
+}
+else
+{
+
+    <div>
+        <div id="Select-List" class="row">
+
+            <div class="col">
+                <img id="Login-open-btn" src="~/resources/icons/Login2.png" />
+            </div>
+
+            <div class="col">
+                <img id="Register-open-btn" src="~/resources/icons/reg3.png" />
+
+            </div>
+
+        </div>
+    </div>
+
+
+    @section Scripts{
+    <script>
+        $("#Login-open-btn").on("click", function () {
+
+        location.href = 'Identity/Account/Login';
+        });
+        $("#Register-open-btn").on("click", function () {
+
+        location.href = 'Identity/Account/Register';
+        });
+    </script>
+    }
+    
+}

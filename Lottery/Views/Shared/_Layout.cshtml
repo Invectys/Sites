@@ -1,0 +1,162 @@
+﻿@using System.Xml.Linq;
+@using Lottery.App_Code;
+@using Lottery.Models.PartialViewModels;
+@using Microsoft.Extensions.Options;
+@inject Lottery.Other.FileControl fileControl;
+@inject  IOptionsMonitor<Lottery.Models.OptionsModels.GoogleCaptchaSettings> Captcha
+@{
+    string person = User.Identity.Name;
+    string bg = "url()";
+    try
+    {
+        //загружаем конфигурационный файл
+        XDocument xdoc = XDocument.Load(fileControl.getPagesPathWithRoot() + "PagesStateConfig/" + person + ".xml");
+        XElement pageXML = xdoc.Element("Page");
+        bg = "url(" + pageXML.Attribute("background").Value + ");";
+
+    }
+    catch (Exception e)
+    {
+
+    }
+}
+@{
+    string CaptchaKey = Captcha.CurrentValue.GoogleReCaptchaPublic;
+    string apijs = "https://www.google.com/recaptcha/api.js?render=" + CaptchaKey;
+}
+<script>
+    var CaptchaKey = '@CaptchaKey';
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create your personal page by 3 minutes" />
+    <meta name="keywords" content="моя строаница,catpage,котстраница,страница,создать,соцсеть,make,social,mysite" />
+    <meta name="author" content="Invectys , Colt  , Artem B. , qzwsecrftb@gmail.com" />
+    <title>@ViewData["Title"]  Cat Page</title>
+
+    <partial name="_Preloader" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    @* Google reCaptcha v3 *@
+    <script src='@apijs'></script>
+
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <style>
+        body
+        {
+            background-repeat: no-repeat!important;
+            background-size: cover!important;
+            background: @bg;
+
+        }
+        </style>
+    }
+    else
+    {
+        <style>
+            body {
+                background-color: white;
+            }
+        </style>
+    }
+    <style>
+        .Header-Items {
+            font-size: 1.5vmax;
+        }
+
+       .Header-Items img {
+           height: 5vh;
+       }
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-toggler navbar-light bg-white box-shadow ">
+            <div class="container-fluid">
+                <img class="ml-5" src="~/resources/LOGO_64.png" />
+
+                <a id="BRAND" class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index">
+                    <h3>Cat Page</h3>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="navbar-collapse collapse d-md-inline-flex flex-md-row-reverse ">
+                    <partial name="_LoginPartial" />
+
+                    <ul class="navbar-nav flex-grow-1 align-content-center">
+                        @*<li class="nav-item">
+                                <a class="nav-link text-info font-weight-bold Header-Items" asp-area="" asp-controller="News" asp-action="Index">
+                                    <img src="~/resources/icons/newspaper.png" />
+                                </a>
+                            </li>*@
+                        @*<li class="navbar-nav flex-grow-1">
+                                <a class="nav-link text-info font-weight-bold Header-Items" asp-area="" asp-controller="Home" asp-action="Find">
+                                    <img src="~/resources/icons/searching-magnifying-glass.png" />
+                                </a>
+                            </li>*@
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container MainContainer">
+        <partial name="_CookieConsentPartial" />
+
+        <main id="Main-Content" role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer ">
+        <div>
+
+
+            <div>
+                &copy; 2019 - Colt Company |
+                Icons made by
+                <a href="https://www.freepik.com/?__hstc=57440181.4085324ad5b6d797b767c9f2242a2caa.1559213178278.1559213178278.1559213178278.1&__hssc=57440181.9.1559213178278&__hsfp=1926891735" title="Freepik">Freepik</a>
+                <a href="https://www.flaticon.com/authors/pixel-buddha" title="Pixel Buddha">Pixel Buddha</a> 
+                
+                from
+                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                is licensed by
+                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var User = '@User.Identity.Name';
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script src="~/lib/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/Main/device.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

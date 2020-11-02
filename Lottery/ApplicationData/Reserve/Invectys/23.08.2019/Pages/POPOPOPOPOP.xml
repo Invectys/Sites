@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Page name="POPOPOPOPOP" background="https://img3.akspic.ru/image/32856-derevyannyj_nastil-etazh-drevesina-morilka-laminat-1920x1080.jpg">
+  <photo-1>
+    <Position left="708" top="96" />
+    <Transform height="357" width="490">
+      <Skew />
+      <Translate />
+    </Transform>
+    <Bgcolor />
+    <Effect />
+    <Scale />
+    <Layer />
+    <img>/PersonalResources/Pictures/Invectys/big_cats_animals_tiger-1271699.jpg</img>
+  </photo-1>
+  <PageInfo>
+    <Height />
+  </PageInfo>
+  <html-1>
+    <file>/PersonalResources/Files/Invectys/perfect.html</file>
+    <Position left="96" top="133" />
+    <Transform height="513" width="606">
+      <Skew />
+      <Translate />
+    </Transform>
+    <Bgcolor />
+    <Effect />
+    <Scale />
+    <Layer />
+  </html-1>
+  <list-1>
+    <Position left="710" top="448" />
+    <Transform height="397" width="482">
+      <Skew />
+      <Translate />
+    </Transform>
+    <Bgcolor />
+    <Effect />
+    <Scale />
+    <Layer />
+    <Post>dfasfsfe f sd fs fe d s f</Post>
+  </list-1>
+</Page>

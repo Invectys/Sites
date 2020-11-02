@@ -1,0 +1,1 @@
+﻿console.log("ContextMenu events were binded");
