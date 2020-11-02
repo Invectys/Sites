@@ -1,0 +1,128 @@
+﻿@model LotteryMVC.Models.GameListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="container">
+            
+            <form method="get">
+                <div class="form-inline form-group">
+
+
+                    <div class="form-group">
+                        <label asp-for="RateMin" class="control-label "> Min Rate </label>
+                        <input type="number" asp-for="RateMin" min="0" class="form-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="RateMax" class="control-label "> Max Rate </label>
+                        <input type="number" asp-for="RateMax" min="0" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Фильтр" class="btn btn-success " />
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" onclick="location.reload">Update</button>
+                    </div>
+                    <div class="form-group">
+                        @if (User.IsInRole("admin"))
+                        {
+                            <a class="btn btn-dark" asp-action="Create">Create New</a>
+                        }
+                    </div>
+                </div>
+            </form>
+
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Game№</th>
+                        <th>
+                            PlayersNum
+                        </th>
+                        <th>
+                            NeedPlayers
+                        </th>
+                        <th>
+                            Rate
+                        </th>
+                        <th>
+                            NeedPhoneConfirmed
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Games)
+                    {
+                        <tr>
+                            <th scope="row">@item.Identifier</th>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PlayersNum)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NeedPlayers)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Rate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NeedPhoneConfirmed)
+                            </td>
+                            <td>
+                                <div class="form-group">
+                                    <p>
+                                        <a class="btn btn-secondary" asp-action="Game" asp-route-Identifier="@item.Identifier">Open</a>
+                                    </p>
+                                   
+                                    @if (User.IsInRole("admin"))
+                                    {
+                                        <form asp-action="Delete" asp-route-Identifier="@item.Identifier" method="post">
+                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                delete
+                                            </button>
+                                        </form>
+                                    }
+
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            @if (Model.PageViewModel.HasPreviousPage)
+            {
+                <a asp-action="Index"
+                   asp-route-page="@(Model.PageViewModel.PageNumber - 1)"
+                   asp-route-RateMin="@Model.RateMin"
+                   asp-route-RateMax="@Model.RateMax"
+                   class="btn btn-primary">
+                    <i class="glyphicon glyphicon-chevron-left"></i>
+                    Назад
+                </a>
+            }
+            @if (Model.PageViewModel.HasNextPage)
+            {
+                <a asp-action="Index"
+                   asp-route-page="@(Model.PageViewModel.PageNumber + 1)"
+                   asp-route-RateMin="@Model.RateMin"
+                   asp-route-RateMax="@Model.RateMax"
+                   class="btn btn-primary">
+                    Вперед
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+            }
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header>
+
+

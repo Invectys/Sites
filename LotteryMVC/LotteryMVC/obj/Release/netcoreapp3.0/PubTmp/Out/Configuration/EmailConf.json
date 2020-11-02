@@ -1,0 +1,9 @@
+﻿{
+  "EmailEnabled": true,
+  "AuthMail": "login@yandex.ru",
+  "FromAddress": "login@yandex.ru",
+  "FromName": "Администрация сайта",
+  "Password": "password",
+  "SmptHost": "smtp.yandex.ru",
+  "SmptPort": 25
+}

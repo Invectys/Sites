@@ -1,0 +1,38 @@
+﻿@model LotteryMVC.Models.EditUserViewModel
+@{
+    ViewBag.Title = "Редактирование пользователя";
+}
+
+<header class="masthead text-center text-white">
+    <div class="masthead-content">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form asp-action="Edit" asp-controller="Users">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <input type="hidden" asp-for="Id" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="UserName" class="control-label">Name</label>
+                        <input type="text" asp-for="UserName" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email" class="control-label">Email</label>
+                        <input type="text" asp-for="Email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Money" class="control-label">Money</label>
+                        <input type="number" asp-for="Money" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Сохранить" class="btn btn-default" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="bg-circle-1 bg-circle"></div>
+    <div class="bg-circle-2 bg-circle"></div>
+    <div class="bg-circle-3 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div>
+</header> 

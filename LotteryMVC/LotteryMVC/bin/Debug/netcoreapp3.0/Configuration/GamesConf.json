@@ -1,0 +1,42 @@
+﻿{
+  "GamesList": [
+    {
+      "NeedPlayers": 1,
+      "Rate": 10
+    },
+    {
+      "NeedPlayers": 2,
+      "Rate": 10
+    },
+    {
+      "NeedPlayers": 2,
+      "Rate": 25
+    },
+    {
+      "NeedPlayers": 2,
+      "Rate": 50
+    },
+    {
+      "NeedPlayers": 2,
+      "Rate": 100
+    },
+    {
+      "NeedPlayers": 2,
+      "Rate": 250
+    },
+    {
+      "NeedPlayers": 2,
+      "Rate": 500
+    },
+    {
+      "NeedPlayers": 2,
+      "Rate": 1000
+    },
+    {
+      "NeedPlayers": 2,
+      "Rate": 2000,
+      "NeedPhoneConfirmed": true
+
+    }
+  ]
+}

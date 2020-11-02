@@ -1,0 +1,112 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> userManager
+@{ 
+    int Money = -1;
+    if(User.Identity.IsAuthenticated)
+    {
+        User user = userManager.FindByNameAsync(User.Identity.Name).Result;
+        Money = user.Money;
+    }
+
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Caramel Lottery</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="~/css/one-page-wonder.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" />
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/Home">CARAMEL Lottery</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-white"><span id="Money-Field">@Money</span>С</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="History" asp-action="Index">Notifications</a>
+                        </li>
+                    }
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" asp-area="" asp-controller="Games" asp-action="Index">Games</a>
+                    </li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Money" asp-action="Deposite">Deposit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Money" asp-action="Withdraw">Withdraw</a>
+                        </li>
+
+                    }
+
+                </ul>
+                <partial name="_LoginPartial" />
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="Notify_Text" class="fixed-top  text-lg-center alert alert-success" style="display:none"></div>
+
+    @RenderBody()
+
+
+
+    <!-- Footer -->
+    <footer class="py-5 bg-black">
+        <div class="container">
+            <p class="m-0 text-center text-white small"><a asp-controller="Home" asp-action="Privacy">privacy</a> Copyright &copy; Caramel Lottery 2019</p>
+
+        </div>
+        <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+    @if(User.Identity.IsAuthenticated)
+    {
+        <script src="~/js/Notify.js"></script>
+    }
+    
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+﻿{
+  "EmailEnabled": true,
+  "AuthMail": "Information@caramelgame.ru",
+  "FromAddress": "Information@caramelgame.ru",
+  "FromName": "Администрация сайта",
+  "Password": "q11zF^4l",
+  "SmptHost": "mail.hosting.reg.ru",
+  "SmptPort": 25
+}
