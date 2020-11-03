@@ -1,0 +1,479 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using 'C:\Users\qzwse\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+Start init
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (118ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[MaxPagesAmount], [a].[Name], [a].[NormalizedName], [a].[PageMaxBlocks], [a].[PageMaxGroupDepth], [a].[PageMaxMainGroups], [a].[StartProfileImage]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (25ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[MaxPagesAmount], [a].[Name], [a].[NormalizedName], [a].[PageMaxBlocks], [a].[PageMaxGroupDepth], [a].[PageMaxMainGroups], [a].[StartProfileImage]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (24ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[MaxPagesAmount], [a].[Name], [a].[NormalizedName], [a].[PageMaxBlocks], [a].[PageMaxGroupDepth], [a].[PageMaxMainGroups], [a].[StartProfileImage]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (23ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[MaxPagesAmount], [a].[Name], [a].[NormalizedName], [a].[PageMaxBlocks], [a].[PageMaxGroupDepth], [a].[PageMaxMainGroups], [a].[StartProfileImage]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (23ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+      FROM [AspNetUsers] AS [a]
+      WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+End init
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[MaxBlocks], [p].[MaxDepth], [p].[MaxMainGroups], [p].[UserProfileId]
+      FROM [PagesInfo] AS [p]
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (25ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[DistId], [m].[Page], [m].[UserId]
+      FROM [MCounterNote] AS [m]
+      WHERE [m].[DistId] = @__id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (22ms) [Parameters=[@__page_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[DistId], [m].[Page], [m].[UserId]
+      FROM [MCounterNote] AS [m]
+      WHERE [m].[Page] = @__page_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (23ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[DistId], [m].[Page], [m].[UserId]
+      FROM [MCounterNote] AS [m]
+      WHERE [m].[DistId] = @__id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (22ms) [Parameters=[@__Id_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Url], [p].[PageId]
+      FROM [PagesUrlToId] AS [p]
+      WHERE [p].[PageId] = @__Id_0
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 794.0925ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 1023.7498ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/404/404.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/icons.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/blazored-modal.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/loading.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/app-tabs.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/view-mode.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/bootstrap.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/app-tabs.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\css\app-tabs.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/icons.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\css\icons.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/404/404.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\404\404.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/view-mode.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\css\view-mode.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\css\site.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/blazored-modal.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\css\blazored-modal.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 66.7318ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 56.41ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/audio-player/audioplayer.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\audio-player\audioplayer.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 73.997ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/loading.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\css\loading.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/_content/BlazorInputFile/inputfile.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 48.8569ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/FileSaveBlazor.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/bootstrap.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 88.2797ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 110.5949ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/_framework/blazor.server.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 116.9638ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/FileSaveBlazor.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\js\FileSaveBlazor.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 31.7082ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/jquery-3.3.1.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/_content/BlazorInputFile/inputfile.js'. Physical path: 'C:\Users\qzwse\.nuget\packages\blazorinputfile\0.2.0\staticwebassets\inputfile.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 154.9026ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/popper.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\js\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 75.7644ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/mdb.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 47.201ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/Gallery/gallery.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\Gallery\gallery.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 32.0703ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/site.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/mdb.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/audio-player/audioplayer.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\audio-player\audioplayer.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 24.9136ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/Gallery/gallery.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\Gallery\gallery.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/site.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\js\site.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/users/admin@gmail.com/images/creationDate=08-17-2020-12-07,id=63cbbac6-a554-4a2a-8eb0-85b8cda0f224.jpg  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 26.485ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 35.9892ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 199.7327ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/bootstrap.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\js\bootstrap.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\css\bootstrap.min.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/mdb.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\js\mdb.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/jquery-3.3.1.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\js\jquery-3.3.1.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/users/admin@gmail.com/images/creationDate=08-17-2020-12-07,id=63cbbac6-a554-4a2a-8eb0-85b8cda0f224.jpg'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\users\admin@gmail.com\images\creationDate=08-17-2020-12-07,id=63cbbac6-a554-4a2a-8eb0-85b8cda0f224.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 305.6216ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 241.074ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 170.3024ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 227.2517ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 140.2798ms 200 image/jpeg
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/css/mdb.min.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\css\mdb.min.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 192.71ms 200 text/css
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 40.9929ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 119.0852ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/img/svg/user.svg  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/img/svg/OrangeLike.svg  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Light.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/img/svg/user.svg'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\img\svg\user.svg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 14.1723ms 200 image/svg+xml
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/img/svg/OrangeLike.svg'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\img\svg\OrangeLike.svg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 15.4907ms 200 image/svg+xml
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Light.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\font\roboto\Roboto-Light.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 23.4861ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 POST https://localhost:44310/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_blazor/negotiate'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_blazor/negotiate'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 54.516ms 200 application/json
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44310/_blazor?id=lfbZaWyXAxoufy5ZLLyQtg  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/favicon.ico  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_blazor'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (25ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Url], [p].[PageId]
+      FROM [PagesUrlToId] AS [p]
+      WHERE [p].[Url] = @__p_0
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 427.1128ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/notfound  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 452.8246ms 302 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 15.673ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 40.8032ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (22ms) [Parameters=[@__page_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[DistId], [m].[Page], [m].[UserId]
+      FROM [MCounterNote] AS [m]
+      WHERE [m].[Page] = @__page_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (26ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[DistId], [m].[Page], [m].[UserId]
+      FROM [MCounterNote] AS [m]
+      WHERE [m].[DistId] = @__id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (22ms) [Parameters=[@__Id_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Url], [p].[PageId]
+      FROM [PagesUrlToId] AS [p]
+      WHERE [p].[PageId] = @__Id_0
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/users/admin@gmail.com/images/creationDate=08-17-2020-12-07,id=63cbbac6-a554-4a2a-8eb0-85b8cda0f224.jpg  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/users/admin@gmail.com/images/creationDate=08-17-2020-12-07,id=63cbbac6-a554-4a2a-8eb0-85b8cda0f224.jpg'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\users\admin@gmail.com\images\creationDate=08-17-2020-12-07,id=63cbbac6-a554-4a2a-8eb0-85b8cda0f224.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 16.9275ms 200 image/jpeg
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/favicon.ico  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (32ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+      FROM [AspNetUsers] AS [a]
+      WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (21ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [u].[UserId], [u].[ProfileImage]
+      FROM [UserProfiles] AS [u]
+      WHERE [u].[UserId] = @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (21ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Url], [p].[PageId]
+      FROM [PagesUrlToId] AS [p]
+      WHERE [p].[Url] = @__p_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (95ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+      FROM [AspNetUsers] AS [a]
+      WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 354.1002ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/notfound  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 401.2529ms 302 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 15.1142ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 34.959ms 200 text/html; charset=utf-8
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (21ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[MaxBlocks], [p].[MaxDepth], [p].[MaxMainGroups], [p].[UserProfileId]
+      FROM [PagesInfo] AS [p]
+      WHERE [p].[UserProfileId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (22ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [a0].[Name]
+      FROM [AspNetUserRoles] AS [a]
+      INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+      WHERE [a].[UserId] = @__userId_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (22ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[MaxPagesAmount], [a].[Name], [a].[NormalizedName], [a].[PageMaxBlocks], [a].[PageMaxGroupDepth], [a].[PageMaxMainGroups], [a].[StartProfileImage]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (21ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT [p].[Id], [p].[MaxBlocks], [p].[MaxDepth], [p].[MaxMainGroups], [p].[UserProfileId]
+      FROM [PagesInfo] AS [p]
+      WHERE [p].[UserProfileId] = @__user_Id_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (22ms) [Parameters=[@__page_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[DistId], [m].[Page], [m].[UserId]
+      FROM [MCounterNote] AS [m]
+      WHERE [m].[Page] = @__page_0
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Regular.woff2  
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (23ms) [Parameters=[@__id_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT [m].[Id], [m].[DistId], [m].[Page], [m].[UserId]
+      FROM [MCounterNote] AS [m]
+      WHERE [m].[DistId] = @__id_0
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Regular.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\font\roboto\Roboto-Regular.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 23.8374ms 200 font/woff2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (25ms) [Parameters=[@__Id_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Url], [p].[PageId]
+      FROM [PagesUrlToId] AS [p]
+      WHERE [p].[PageId] = @__Id_0
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/users/admin@gmail.com/images/creationDate=08-17-2020-12-07,id=63cbbac6-a554-4a2a-8eb0-85b8cda0f224.jpg  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/users/admin@gmail.com/images/creationDate=08-17-2020-12-07,id=63cbbac6-a554-4a2a-8eb0-85b8cda0f224.jpg'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\users\admin@gmail.com\images\creationDate=08-17-2020-12-07,id=63cbbac6-a554-4a2a-8eb0-85b8cda0f224.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 28.5429ms 200 image/jpeg
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/img/svg/settings.svg  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/img/svg/trash.svg  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/img/svg/settings.svg'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\img\svg\settings.svg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 41.415ms 200 image/svg+xml
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/img/svg/trash.svg'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\img\svg\trash.svg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 59.3298ms 200 image/svg+xml
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Bold.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Bold.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\dist\font\roboto\Roboto-Bold.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 12.201ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/images/pages/defaultPageImg.jpg  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/images/pages/defaultPageImg.jpg'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2\YourSpace\wwwroot\images\pages\defaultPageImg.jpg'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 19.8237ms 200 image/jpeg
+fail: Microsoft.AspNetCore.Components.Server.Circuits.CircuitHost[111]
+      Unhandled exception in circuit 'YQjrCAtkNU9bsNr665xOD12CtJi_6lHllxOBCE1FR1s'.
+System.InvalidOperationException: The instance of entity type 'MUrlCompare' cannot be tracked because another instance with the same key value for {'Url'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NullableKeyIdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean

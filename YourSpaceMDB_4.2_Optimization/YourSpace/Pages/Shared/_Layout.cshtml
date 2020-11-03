@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Hosting
+@using Microsoft.AspNetCore.Mvc.ViewEngines
+@inject IWebHostEnvironment Environment
+@inject ICompositeViewEngine Engine
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - YourSpace</title>
+    <link rel="stylesheet" href="~/Identity/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Identity/css/site.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Material Design Bootstrap -->
+    <link href="~/dist/css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="~/dist/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="d-flex flex-column flex-md-row p-3 align-items-center border-bottom box-shadow">
+            <h3 class="my-0 mr-md-auto font-italic"><a href="/">Blue Journal</a></h3>
+            <nav class="mr-md-4">
+                @{
+                    await Html.RenderPartialAsync("_LoginPartial");
+                }
+
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="footer border-top text-muted">
+        <div class="container">
+            &copy; 2020 - BlueJornal - <a asp-area="" asp-page="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/Identity/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/Identity/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Identity/js/site.js" asp-append-version="true"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="~/dist/js/popper.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="~/dist/js/mdb.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

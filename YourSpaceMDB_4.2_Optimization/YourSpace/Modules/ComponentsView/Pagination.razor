@@ -1,0 +1,17 @@
+﻿@inject IStringLocalizer<Pagination> L
+
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination pg-blue">
+        <li class="page-item btn btn-primary" @onclick="Previous">@L["Previous"]</li>
+        <li class="page-item btn btn-primary" @onclick="Next">@L["Next"]</li>
+    </ul>
+</nav>
+
+
+@code{
+
+    [Parameter] public EventCallback Next { get; set; }
+    [Parameter] public EventCallback Previous { get; set; }
+
+}

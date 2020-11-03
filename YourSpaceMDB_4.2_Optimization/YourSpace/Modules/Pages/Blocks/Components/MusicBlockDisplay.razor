@@ -1,0 +1,7 @@
+﻿@inject LBlocksInfo L
+<Card1 Description="@L["MusicDescription"]" Title="@L["MusicTitle"]" Image="@L["MusicImage"]" OnClick="OnClick"></Card1>
+
+@code
+{
+    [Parameter] public EventCallback OnClick { get; set; }
+}

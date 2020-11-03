@@ -1,0 +1,31 @@
+﻿@inherits CModalTemplete
+@inject IStringLocalizer<InputImageForm> L
+
+<EditForm EditContext="_editContext">
+    <InputImage @bind-Value="_image.Path"></InputImage>
+    <Button1 Submit="true">@L["Continue"]</Button1>
+</EditForm>
+
+
+@code {
+
+    private Image _image = new Image();
+    private EditContext _editContext;
+
+    void Selected()
+    {
+        Close(ModalResult.OK(_image.Path));
+    }
+
+    public static new int GetDefaultModalId() => 1;
+
+    private class Image
+    {
+        public string Path { get; set; }
+    }
+
+    protected override void OnInitialized()
+    {
+        _editContext = new EditContext(_image);
+    }
+}

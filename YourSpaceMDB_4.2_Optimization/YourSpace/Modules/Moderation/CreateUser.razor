@@ -1,0 +1,58 @@
+﻿@inherits CModalTemplete
+@inject IStringLocalizer<CreateUser> L
+
+<EditForm Model="_newUser" OnValidSubmit="ValidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <MyInputText @bind-Value="_newUser.FirstName" Label="@L["First name"]"></MyInputText>
+    <MyInputText @bind-Value="_newUser.LastName" Label="@L["Last name"]"></MyInputText>
+    <MyInputText type="email" @bind-Value="_newUser.Email" Label="@L["Email"]"></MyInputText>
+    <MyInputText type="password" @bind-Value="_newUser.Password" Label="@L["Password"]"></MyInputText>
+    <MyInputRole @bind-Value="_newUser.Role" CurrentRole="@(YourSpace.Modules.Initializer.RolesList.User.Name)"></MyInputRole>
+    <Button1 Submit="true">@L["Create"]</Button1>
+</EditForm>
+
+@code {
+
+    [Inject] protected ISUsers SUsers { get; set; }
+    [Inject] protected ISUsersModeration SUsersModeration { get; set; }
+
+    MCreateUser _newUser = new MCreateUser();
+
+    protected override void OnInitialized()
+    {
+
+    }
+
+    async void ValidSubmit()
+    {
+        var set = await SUsersModeration.CreateUser(_newUser);
+        var result = set.Item1;
+        var user = set.Item2;
+
+        if(result.Succeeded)
+        {
+            var p = new ModalParameters();
+            p.Add("Message", "");
+            
+            SModal.Show<Info>(L["User Created"], p);
+            Close(ModalResult.OK(""));
+        }
+        else
+        {
+            string message = "";
+            foreach(var e in result.Errors)
+            {
+                message += e.Description;
+                message += "  ";
+            }
+            var p = new ModalParameters();
+            p.Add("Message", message);
+            SModal.Show<Info>(L["Operation failed"], p);
+        }
+
+    }
+
+    public static new int GetDefaultModalId() => 1;
+
+}

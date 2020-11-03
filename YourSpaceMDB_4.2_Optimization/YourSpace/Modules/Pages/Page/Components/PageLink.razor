@@ -1,0 +1,26 @@
+﻿<a href="@Url" class="@Class">@ChildContent</a>
+
+
+
+@code {
+
+    [Inject] protected ISPagesUrl SUrl { get; set; }
+
+    [Parameter] public string Id { get; set; }
+    [Parameter] public bool Edit { get; set; } = false;
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public string Class { get; set; }
+
+    public string Url { get; set; }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine("Init PageLinkStart");
+        Url = Edit ? await SUrl.GetPageUrlEdit(Id) : await SUrl.GetPageUrl(Id);
+        Console.WriteLine("Init PageLinkEnd");
+    }
+
+    
+
+}

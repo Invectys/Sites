@@ -1,0 +1,55 @@
+﻿@inherits CModalTemplete
+@inject IStringLocalizer<CreateNewRole> L
+@using Microsoft.AspNetCore.Identity;
+@using YourSpace.Areas.Identity;
+
+<EditForm Model="_role" OnValidSubmit="Submit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+
+    <MyInputText @bind-Value="_role.Name" Label="@L["Name"]"></MyInputText>
+    <MyInputNumber @bind-Value="_role.MaxPagesAmount" Label="@L["Max pages"]"></MyInputNumber>
+    <MyInputNumber @bind-Value="_role.PageMaxBlocks" Label="@L["Max blocks"]"></MyInputNumber>
+    <MyInputNumber @bind-Value="_role.PageMaxMainGroups" Label="@L["Max main groups"]"></MyInputNumber>
+    <MyInputNumber @bind-Value="_role.PageMaxGroupDepth" Label="@L["Max groups depth"]"></MyInputNumber>
+
+    <button type="submit" class="btn btn-primary">@L["Create"]</button>
+</EditForm>
+<small class="text-danger">@InfoMessage</small>
+
+
+@code
+{
+    public string InfoMessage { get; set; }
+
+    [Inject] public Microsoft.Extensions.Options.IOptions<MPageSettings> DefPageSettings { get; set; }
+    [Inject] protected RoleManager<MIdentityRole> RoleManager { get; set; }
+
+    private MIdentityRole _role = new MIdentityRole();
+
+    public static new int GetDefaultModalId() => 1;
+
+    protected override async Task OnInitializedAsync()
+    {
+    }
+
+    protected override void OnInitialized()
+    {
+        _role.SetSettings(DefPageSettings.Value);
+    }
+
+    async void Submit()
+    {
+        var result = await RoleManager.CreateAsync(_role);
+        if (result.Succeeded)
+        {
+            Close(ModalResult.OK(""));
+        }
+        else
+        {
+            var e = result.Errors.ToList()[0];
+            InfoMessage = e.Description;
+        }
+    }
+
+}

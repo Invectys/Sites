@@ -1,0 +1,1196 @@
+info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using 'C:\Users\qzwse\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (288ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[MaxPagesAmount], [a].[Name], [a].[NormalizedName], [a].[PageMaxBlocks], [a].[PageMaxGroupDepth], [a].[PageMaxMainGroups], [a].[StartProfileImage]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (188ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[MaxPagesAmount], [a].[Name], [a].[NormalizedName], [a].[PageMaxBlocks], [a].[PageMaxGroupDepth], [a].[PageMaxMainGroups], [a].[StartProfileImage]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (197ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[MaxPagesAmount], [a].[Name], [a].[NormalizedName], [a].[PageMaxBlocks], [a].[PageMaxGroupDepth], [a].[PageMaxMainGroups], [a].[StartProfileImage]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (196ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[MaxPagesAmount], [a].[Name], [a].[NormalizedName], [a].[PageMaxBlocks], [a].[PageMaxGroupDepth], [a].[PageMaxMainGroups], [a].[StartProfileImage]
+      FROM [AspNetRoles] AS [a]
+      WHERE [a].[NormalizedName] = @__normalizedName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (188ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+      FROM [AspNetUsers] AS [a]
+      WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 357.2394ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 573.7009ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/icons.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/view-mode.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/loading.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/app-tabs.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/bootstrap.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/404/404.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/mdb.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/app-tabs.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\app-tabs.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/icons.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\icons.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/audio-player/audioplayer.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\audio-player\audioplayer.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/loading.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\loading.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/view-mode.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\view-mode.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/404/404.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\404\404.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 109.7984ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 38.4282ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\site.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 122.0516ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/blazored-modal.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 134.1817ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/_framework/blazor.server.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/_content/BlazorInputFile/inputfile.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 148.8422ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 162.0889ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/FileSaveBlazor.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 139.0522ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/Gallery/gallery.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\Gallery\gallery.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/blazored-modal.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\blazored-modal.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 46.9332ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/jquery-3.3.1.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 51.128ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/mdb.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/_content/BlazorInputFile/inputfile.js'. Physical path: 'C:\Users\qzwse\.nuget\packages\blazorinputfile\0.2.0\staticwebassets\inputfile.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 67.6254ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/bootstrap.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/FileSaveBlazor.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\FileSaveBlazor.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 70.3608ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/site.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/popper.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/Gallery/gallery.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\Gallery\gallery.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 98.9962ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/site.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\site.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/audio-player/audioplayer.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\audio-player\audioplayer.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 125.0609ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 103.7193ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/bootstrap.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\bootstrap.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\css\bootstrap.min.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/popper.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\popper.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/jquery-3.3.1.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\jquery-3.3.1.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 171.5979ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 387.3564ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 153.0665ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 213.3848ms 200 application/javascript
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 250.0915ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/mdb.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\mdb.min.js'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 223.6847ms 200 application/javascript
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/css/mdb.min.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\css\mdb.min.css'
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 429.5346ms 200 text/css
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 56.7953ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 188.2301ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Light.woff2  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Regular.woff2  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Bold.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Light.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Light.woff2'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Bold.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Bold.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 33.7853ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 37.6678ms 200 font/woff2
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Regular.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Regular.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 50.8342ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 POST https://localhost:44310/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_blazor/negotiate'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_blazor/negotiate'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 78.6872ms 200 application/json
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/favicon.ico  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44310/_blazor?id=Xk8B2FsTuFCXDoqksvHhZA  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_blazor'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (171ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Url], [p].[PageId]
+      FROM [PagesUrlToId] AS [p]
+      WHERE [p].[Url] = @__p_0
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 748.3047ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/notfound  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 793.421ms 302 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 17.7092ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 34.0166ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/view-mode.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/loading.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/icons.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/app-tabs.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/mdb.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.css  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/site.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/loading.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/app-tabs.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /Gallery/gallery.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/view-mode.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/icons.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /dist/css/mdb.min.css was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 61.9064ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 63.4755ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 67.9516ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 47.6803ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 77.8785ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 64.2163ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 48.8214ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/bootstrap.min.css  
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/404/404.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/blazored-modal.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /404/404.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /audio-player/audioplayer.css was not modified
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /css/blazored-modal.css was not modified
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 17.5505ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 21.7745ms 304 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/bootstrap.min.js.map  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 22.4395ms 304 text/css
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[6]
+      The file /dist/css/bootstrap.min.css was not modified
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 65.507ms 304 text/css
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 101.0967ms
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 152.8813ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 41.9901ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 78.5116ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 44.4738ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 71.8804ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 POST https://localhost:44310/_blazor/disconnect multipart/form-data; boundary=----WebKitFormBoundarygmRH3A4EECOJs6PO 359
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Blazor disconnect'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_blazor'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/view-mode.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/icons.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/loading.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/blazored-modal.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/404/404.css  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Blazor disconnect'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/icons.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\icons.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/blazored-modal.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\blazored-modal.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/404/404.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\404\404.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\site.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 37.4538ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 39.8515ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 137.1108ms 200 
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/view-mode.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\view-mode.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/loading.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\loading.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 56.5091ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 63.3582ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/app-tabs.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 45105.7761ms 101 
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/Gallery/gallery.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\Gallery\gallery.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 94.7623ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/audio-player/audioplayer.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\audio-player\audioplayer.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/app-tabs.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\app-tabs.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 38.5886ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/mdb.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 42.3997ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/_framework/blazor.server.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/FileSaveBlazor.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 46.1052ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/jquery-3.3.1.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/FileSaveBlazor.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\FileSaveBlazor.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/_content/BlazorInputFile/inputfile.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/bootstrap.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 37.1177ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 185.7162ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/mdb.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/bootstrap.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/_content/BlazorInputFile/inputfile.js'. Physical path: 'C:\Users\qzwse\.nuget\packages\blazorinputfile\0.2.0\staticwebassets\inputfile.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/site.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 88.1671ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/Gallery/gallery.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\Gallery\gallery.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/jquery-3.3.1.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\jquery-3.3.1.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 43.5798ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 127.7315ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/audio-player/audioplayer.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\audio-player\audioplayer.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/site.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\site.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 146.7712ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 35.0012ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/popper.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\popper.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\css\bootstrap.min.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 72.7351ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/bootstrap.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\bootstrap.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 139.7943ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 91.9847ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 91.0009ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/css/mdb.min.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\css\mdb.min.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/mdb.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\mdb.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 201.6141ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 119.9417ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 22.6626ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 47.3388ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Light.woff2  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Regular.woff2  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Bold.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Bold.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Bold.woff2'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Regular.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Regular.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 34.5812ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 38.3568ms 200 font/woff2
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Light.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Light.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 48.8907ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 POST https://localhost:44310/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_blazor/negotiate'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_blazor/negotiate'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 23.942ms 200 application/json
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/bootstrap.min.js.map  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 24.3644ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 58.1311ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44310/_blazor?id=N1icZztlzMk_WDhYJOD7ag  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_blazor'
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/favicon.ico  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (171ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Url], [p].[PageId]
+      FROM [PagesUrlToId] AS [p]
+      WHERE [p].[Url] = @__p_0
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 407.4672ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 453.6919ms 302 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/notfound  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 21.0204ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 40.2172ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 26.1026ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 47.1694ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 POST https://localhost:44310/_blazor/disconnect multipart/form-data; boundary=----WebKitFormBoundaryyOBoITcmBpfdy0Jr 359
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_blazor'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 17317.8356ms 101 
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Blazor disconnect'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Blazor disconnect'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 44.509ms 200 
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/icons.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/view-mode.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/loading.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/app-tabs.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/blazored-modal.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/mdb.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/404/404.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/bootstrap.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/bootstrap.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\site.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/blazored-modal.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\blazored-modal.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/icons.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\icons.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/mdb.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/site.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/view-mode.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\view-mode.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/404/404.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\404\404.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/loading.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\loading.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/FileSaveBlazor.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/Gallery/gallery.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\Gallery\gallery.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/_framework/blazor.server.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 145.5288ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/_content/BlazorInputFile/inputfile.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/jquery-3.3.1.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 137.5641ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/app-tabs.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\app-tabs.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 200.0662ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 216.4999ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/_content/BlazorInputFile/inputfile.js'. Physical path: 'C:\Users\qzwse\.nuget\packages\blazorinputfile\0.2.0\staticwebassets\inputfile.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 244.3243ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 104.6455ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 274.7093ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 275.947ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/audio-player/audioplayer.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\audio-player\audioplayer.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\css\bootstrap.min.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 253.1667ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 210.3934ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 278.0705ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/css/mdb.min.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\css\mdb.min.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 289.3417ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/Gallery/gallery.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\Gallery\gallery.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 232.2318ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/bootstrap.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\bootstrap.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/site.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\site.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 327.7999ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 265.6433ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/audio-player/audioplayer.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\audio-player\audioplayer.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/FileSaveBlazor.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\FileSaveBlazor.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/popper.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 276.7487ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 275.8384ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 268.0714ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 325.3845ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/mdb.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\mdb.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/jquery-3.3.1.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\jquery-3.3.1.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 313.9267ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 257.8793ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 29.0802ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 54.7496ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Medium.woff2  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Regular.woff2  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Bold.woff2  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Light.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Bold.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Bold.woff2'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Medium.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Medium.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 37.2342ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 47.2421ms 200 font/woff2
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Regular.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Regular.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 57.2683ms 200 font/woff2
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Light.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Light.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 POST https://localhost:44310/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 84.4921ms 200 font/woff2
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_blazor/negotiate'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_blazor/negotiate'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 25.357ms 200 application/json
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/bootstrap.min.js.map  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 27.8664ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 56.6818ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44310/_blazor?id=Rha9Unpq9bkXqbURoJML4Q  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_blazor'
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/favicon.ico  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.EntityFrameworkCore.Infrastructure[10403]
+      Entity Framework Core 3.1.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (172ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+      SELECT TOP(1) [p].[Url], [p].[PageId]
+      FROM [PagesUrlToId] AS [p]
+      WHERE [p].[Url] = @__p_0
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 431.2981ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 470.9309ms 302 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/notfound  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 18.2494ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 35.4726ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 21.4436ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 43.209ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 POST https://localhost:44310/_blazor/disconnect multipart/form-data; boundary=----WebKitFormBoundaryOjvUc8r1BRVfxYDu 359
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Blazor disconnect'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_blazor'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 26283.1636ms 101 
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Blazor disconnect'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 40.1288ms 200 
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/site.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/view-mode.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/icons.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/404/404.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/mdb.min.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\site.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/app-tabs.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/icons.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\icons.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 66.0188ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/view-mode.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\view-mode.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/404/404.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\404\404.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/Gallery/gallery.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\Gallery\gallery.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 47.5884ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 64.3389ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/audio-player/audioplayer.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\audio-player\audioplayer.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 43.1941ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 49.4969ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/css/bootstrap.min.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/_framework/blazor.server.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/FileSaveBlazor.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 85.4215ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/FileSaveBlazor.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\FileSaveBlazor.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/_content/BlazorInputFile/inputfile.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 29.9089ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/popper.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/Gallery/gallery.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/_content/BlazorInputFile/inputfile.js'. Physical path: 'C:\Users\qzwse\.nuget\packages\blazorinputfile\0.2.0\staticwebassets\inputfile.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/jquery-3.3.1.min.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/app-tabs.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\app-tabs.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 36.4682ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/popper.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\popper.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 112.3915ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/mdb.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 46.7092ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/bootstrap.min.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/site.js  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/Gallery/gallery.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\Gallery\gallery.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/audio-player/audioplayer.js  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/blazored-modal.css  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 43.7578ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/loading.css  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/site.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\site.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/blazored-modal.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\blazored-modal.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/audio-player/audioplayer.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\audio-player\audioplayer.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 27.0672ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 36.1077ms 200 application/javascript
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/css/loading.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\css\loading.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 41.1713ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/jquery-3.3.1.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\jquery-3.3.1.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/_framework/blazor.server.js'. Physical path: 'N/A'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\css\bootstrap.min.css'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 27.302ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 92.8427ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 153.0025ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 170.5187ms 200 text/css
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/mdb.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\mdb.min.js'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/css/mdb.min.css'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\css\mdb.min.css'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/js/bootstrap.min.js'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\js\bootstrap.min.js'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 107.6093ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 237.8016ms 200 text/css
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 119.9012ms 200 application/javascript
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/css/open-iconic/font/css/open-iconic-bootstrap.min.css  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 18.1421ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 34.9325ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 POST https://localhost:44310/_blazor/negotiate?negotiateVersion=1 text/plain;charset=UTF-8 0
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_blazor/negotiate'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_blazor/negotiate'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 34.7259ms 200 application/json
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Bold.woff2  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Regular.woff2  
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/font/roboto/Roboto-Light.woff2  
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Bold.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Bold.woff2'
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Regular.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Regular.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 19.8001ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 19.1912ms 200 font/woff2
+info: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[2]
+      Sending file. Request path: '/dist/font/roboto/Roboto-Light.woff2'. Physical path: 'C:\Users\qzwse\source\repos\YourSpaceMDB_4.2_Optimization\YourSpace\wwwroot\dist\font\roboto\Roboto-Light.woff2'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 27.4618ms 200 font/woff2
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/dist/js/bootstrap.min.js.map  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      Executing an implicit handler method - ModelState is Valid
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[104]
+      Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[4]
+      Executed page /_Host in 19.6016ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint '/_Host'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished in 40.1055ms 200 text/html; charset=utf-8
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET https://localhost:44310/_blazor?id=r1ZQkcXNgvPlHFQu9-OrSw  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_blazor'
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[2]
+      Authorization failed.
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2.0 GET https://localhost:44310/favicon.ico  
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint '/_Host'
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[3]
+      Route matched with {page = "/_Host", area = ""}. Executing page /_Host
+info: Microsoft.AspNetCore.Mvc.RazorPages.Infrastructure.PageActionInvoker[103]
+      

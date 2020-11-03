@@ -1,0 +1,37 @@
+﻿@page "/moderation/pages"
+@attribute [Authorize(Roles="Admin")]
+@inject IStringLocalizer<PagesModeration> L
+
+<div class="md-form mt-0">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search" @bind-value="PageName">
+           
+    <button class="btn btn-primary" @onclick="FindPages">@L["Search"]</button>
+</div>
+
+
+<PagesList Pages="pages" ShowEditPage="true" ShowModerationPage="true"></PagesList>
+
+
+
+@code {
+
+    [Inject] protected ISPagesUrl SPagesUrl { get; set; }
+    [Inject] protected ISPages SPages { get; set; }
+    [Inject] protected ISPagesModifier SPagesModifier { get; set; }
+
+
+    public string PageName { get; set; } = "";
+    private List<MPageInfo> pages = new List<MPageInfo>();
+
+    void FindPages()
+    {
+        pages = SPages.FindPages(PageName);
+    }
+
+    protected override void OnInitialized()
+    {
+        FindPages();
+    }
+
+
+}

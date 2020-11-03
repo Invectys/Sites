@@ -1,0 +1,32 @@
+﻿
+
+.app-tabs-pannel {
+    width: 100%;
+}
+
+.app-pannel-music {
+    min-width: 70%;
+}
+
+.app-tabs-main {
+    background-color: white;
+    z-index: 2;
+}
+
+.app-tabs-second {
+    background-color: white;
+    border-top-style: groove;
+    border-top-color: seashell;
+    position: relative;
+    z-index: 1;
+    transition-property: top;
+    transition-duration:0.5s;
+    transition-timing-function: ease;
+}
+
+.app-tabs-second-show{
+    top:0px;
+}
+.app-tabs-second-hide {
+    top: 60px;
+}

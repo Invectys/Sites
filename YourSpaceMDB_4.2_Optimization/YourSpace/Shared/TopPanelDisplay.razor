@@ -1,0 +1,38 @@
+﻿@inject IStringLocalizer<TopPanelDisplay> L
+@inject NavigationManager Navigation
+
+
+<div class="d-flex flex-row justify-content-between border-bottom box-shadow p-3">
+    <div class="icon icon-book-open cursor-pointer" @onclick="AllPages"></div>
+    <AuthorizeView>
+        <Authorized>
+            <AccountLink UserName="@claims.Identity.Name">
+                <div class="icon icon-home"></div>
+            </AccountLink>
+        </Authorized>
+        <NotAuthorized>
+
+        </NotAuthorized>
+    </AuthorizeView>
+
+</div>
+
+@code
+{
+    System.Security.Claims.ClaimsPrincipal claims;
+    [CascadingParameter] public Task<AuthenticationState> Auth { get; set; }
+    [Parameter] public YourSpace.Modules.Browser.EDeviceResolution Resolution { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        claims = (await Auth).User;
+    }
+
+
+  
+
+    void AllPages()
+    {
+        Navigation.NavigateTo("/all");
+    }
+}

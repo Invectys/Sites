@@ -1,0 +1,41 @@
+﻿@inject IStringLocalizer<CreateNewPageDisplay> L
+
+<div @onclick="OpenCreateNewPageComponent" type="button"
+        class="@Class">
+        @ChildContent
+</div>
+
+
+@code {
+
+    [Parameter] public string Class { get; set; } = "";
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public EventCallback PageCreated { get; set; }
+
+    [Inject] protected ISPagesUrl SUrls { get; set; }
+    [Inject] protected ISModal SModal { get; set; }
+    [Inject] protected NavigationManager Navigation { get; set; }
+
+    protected void OpenCreateNewPageComponent()
+    {
+        SModal.Show<CreatePage>(L["New page"], new ModalParameters(),
+            ViewStorageApp.CreateNewPageModalOptions, ClosedCreateNewPage);
+    }
+
+    async void ClosedCreateNewPage(ModalResult result)
+    {
+        if (!result.Cancelled)
+        {
+            MPage page = (MPage)result.Data;
+            await CloseCreateNewPageComponent(page);
+        }
+    }
+
+    async Task CloseCreateNewPageComponent(MPage page)
+    {
+        Navigation.NavigateTo(await SUrls.GetPageUrl(page.Id));
+
+        if(PageCreated.HasDelegate)await PageCreated.InvokeAsync(this);
+    }
+
+}

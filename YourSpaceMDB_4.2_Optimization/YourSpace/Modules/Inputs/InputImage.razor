@@ -1,0 +1,38 @@
+﻿@inherits InputText
+@inject IStringLocalizer<InputImage> L
+@inject YourSpace.Services.ISModal SModal
+
+<div class="d-flex flex-column justify-content-center">
+    <label class="flex-shrink-0 mx-2" >@Label</label>
+    <button type="button" class="btn btn-primary" @onclick="SelectImage">@L["SelectImage"]</button>
+    <div class="d-flex justify-content-center mw-100">
+        <img class="img-fluid img-input" src="@CurrentValue" />
+    </div>
+    
+</div>
+
+@code {
+
+    protected void SelectImage()
+    {
+        ModalParameters parameters = new ModalParameters();
+        SModal.Show<SelectImageGallery>(L["Gallery"], parameters, ViewStorageApp.SelectImageModalOpt, ImageSelected);
+    }
+
+    protected void ImageSelected(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+            ModalParameters parameters = (ModalParameters)result.Data;
+            Value = parameters.Get<string>("SelectedImage");
+            ChangeEventArgs args = new ChangeEventArgs();
+            args.Value = Value;
+            ValueChanged.InvokeAsync(CurrentValue);
+            StateHasChanged();
+        }
+
+    }
+
+    [Parameter] public string Label { get; set; }
+
+}

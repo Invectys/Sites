@@ -1,0 +1,19 @@
+﻿@inherits CModalTemplete
+
+<EditUserForm UserId="@UserId" onSubmit="Edited"></EditUserForm>
+
+@code
+{
+    public string UserId { get; set; }
+    public static new int GetDefaultModalId() => 1;
+
+    protected override void OnInitialized()
+    {
+        UserId = ModalParameters.Get<string>("UserId");
+    }
+
+    void Edited()
+    {
+        Close(ModalResult.OK("ok"));
+    }
+}

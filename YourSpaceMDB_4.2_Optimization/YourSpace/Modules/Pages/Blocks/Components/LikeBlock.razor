@@ -1,0 +1,17 @@
+﻿@inherits CPageBlock
+
+<ThingLike IdModel="Like" PageId="@Model().PageId"></ThingLike>
+
+
+@functions
+{
+    MLikeBlock Model() => (Block as MLikeBlock);
+
+    MThingCounter Like
+    {
+        get
+        {
+            return new MThingCounter() { Id = Block.PageId + Block.UniqueId, ThingType = new MCounterLike() };
+        }
+    }
+}

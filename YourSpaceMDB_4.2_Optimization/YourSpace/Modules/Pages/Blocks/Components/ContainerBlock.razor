@@ -1,0 +1,17 @@
+﻿
+<div>
+    <div class="position-relative order-1 block-container-top">
+        @TopFragment
+    </div>
+    <div class="@*h-100*@">
+        @ChildContent
+    </div>
+</div>
+
+@code
+{
+    [Parameter] public MBlockCssDesigner CssDesigner { get; set; } = null;
+    [Parameter] public RenderFragment TopFragment { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+}
+

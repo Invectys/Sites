@@ -1,0 +1,14 @@
+﻿<button type="@Type"  @onclick="OnClick" class="btn btn-primary">@ChildContent</button>
+
+@code
+{
+    [Parameter] public EventCallback OnClick { get; set; }
+    [Parameter] public bool Submit { get; set; } = false;
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    public string Type {
+        get{
+            return Submit ? "submit" : "button";
+        }
+    }
+}

@@ -1,0 +1,37 @@
+﻿@inherits CGroupViewMode
+
+
+
+
+<div class="row m-auto @(HaveRoot ? "" : Class) ">
+    <GalleryGrid @ref="_galleryGrid" Options="GaleryOptions">
+        @foreach (var container in RenderedBlocksList)
+        {
+            <GalleryGridElement>
+                @container
+            </GalleryGridElement>
+        }
+    </GalleryGrid>
+</div>
+
+
+@code
+{ 
+
+    public string Class { get; set; } = "col-sm-12 col-md-12 px-0 col-lg-9";
+
+    private GalleryOptions GaleryOptions;
+    private GalleryGrid _galleryGrid;
+
+    public override async Task UpdateGridAsync()
+    {
+        await _galleryGrid.UpdateGrid();
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        GaleryOptions = new GalleryOptions() { GalleryId = "gallery" + DateTime.Now.Ticks, ColumnsClass= "gallery-size-2" };
+    }
+
+}

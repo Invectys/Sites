@@ -1,0 +1,16 @@
+﻿@inherits CPageBlock
+
+<ThingSubscribe IdModel="Subscribe" PageId="@Model().PageId"></ThingSubscribe>
+
+
+@functions
+{
+    MSubscribeBlock Model() => (Block as MSubscribeBlock);
+    
+    MThingCounter Subscribe {
+        get
+        {
+            return new MThingCounter() { Id = Block.PageId, ThingType = new MCounterSubscribe() };
+        }
+    }
+}

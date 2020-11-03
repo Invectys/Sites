@@ -1,0 +1,59 @@
+﻿@using YourSpace.Modules.Music
+@inherits InputBase<MMusic>
+@inject IStringLocalizer<MyInputMusic> L
+
+@inject YourSpace.Services.ISModal SModal
+
+<div class="d-flex flex-column justify-content-center">
+    <label class="flex-shrink-0 mx-2">@Label</label>
+    <button type="button" class="btn btn-primary" @onclick="Select">@L["Select Music"]</button>
+    @if(Loaded)
+    {
+        <MusicDisplay Model="@Value"></MusicDisplay>
+    }
+</div>
+
+@code {
+
+    [Parameter] public string Label { get; set; }
+
+    public bool Loaded {
+        get
+        {
+            return (Value != null) && (Value.Id != null);
+        }
+    }
+
+    protected void Select()
+    {
+        Value = null;
+        ModalParameters parameters = new ModalParameters();
+
+        SModal.Show<SelectMusicGallery>(L["Music"], parameters, ViewStorageApp.SelectImageModalOpt, MusicSelected);
+    }
+
+    protected void MusicSelected(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+            ModalParameters parameters = (ModalParameters)result.Data;
+            Value = parameters.Get<MMusic>("SelectedMusic");
+            ValueChanged.InvokeAsync(Value);
+            StateHasChanged();
+        }
+    }
+
+    protected override string FormatValueAsString(MMusic value)
+    {
+        string str = System.Text.Json.JsonSerializer.Serialize(value);
+        return str;
+    }
+
+    protected override bool TryParseValueFromString(string str, out MMusic music, out string outStr)
+    {
+
+        music = System.Text.Json.JsonSerializer.Deserialize<MMusic>(str);
+        outStr = default;
+        return true;
+    }
+}

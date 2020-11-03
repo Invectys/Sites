@@ -1,0 +1,82 @@
+﻿@inject YourSpace.Services.ISModal SModal
+@inject YourSpace.Services.ISBlocksAllow SBlocksAllow
+@inject IStringLocalizer<ModifyGroupOnPageDisplay> L
+
+<div class="d-flex flex-row justify-content-center my-4">
+     <div @onclick="DeleteGroup" class="icon icon-trash cursor-pointer">
+     </div>
+     <div @onclick="CreateNewBlock" class="icon icon-plus cursor-pointer">
+     </div>
+</div>
+
+@code {
+
+
+    [Parameter] public CPage ComponentPage { get; set; }
+    [Parameter] public MBlocksGroup Group { get; set; }
+
+    public void DeleteGroup()
+    {
+        Group.Component.DeleteGroup();
+
+    }
+
+    public void CreateNewBlock()
+    {
+        ComponentPage.HideBtnPannel();
+        ModalParameters parameters = new ModalParameters();
+        parameters.Add("BlocksList", SBlocksAllow.GetAllowBlocks(ComponentPage.CurrentPage, Group));
+        SModal.Show<SelectBlock>(L["Blocks"], parameters,ViewStorageApp.CreateNewBlockModalOptions, BlockSelected);
+    }
+
+    private void BlockSelected(ModalResult result)
+    {
+
+        if (result.Cancelled)
+        {
+            ComponentPage.ShowBtnPannel(true);
+        }
+        else
+        {
+            ModalParameters reultParams = (ModalParameters)result.Data;
+            MPageBlock block = (MPageBlock)Activator.CreateInstance(reultParams.Get<Type>("SelectedBlock"));
+            reultParams.Add("Block", block);
+            if(block.GetType().IsAssignableFrom(typeof(MGroupBlock)))
+            {
+                SModal.Show<CreateGroup>(L["New Group"], reultParams, GroupCreated);
+            }
+            else
+            {
+                SModal.Show<CreateBlock>(L["Create"], reultParams,ViewStorageApp.CreateNewBlockModalOptions, BlockSetuped);
+            }
+        }
+
+    }
+
+    void GroupCreated(ModalResult result)
+    {
+        ComponentPage.ShowBtnPannel();
+        var modalParams = (ModalParameters)result.Data;
+        MBlocksGroup newGroup = modalParams.Get<MBlocksGroup>("Group");
+        var block = modalParams.Get<MGroupBlock>("Block");
+        block.ContainGroup = newGroup;
+
+        ComponentPage.ShowBtnPannel(true);
+        Group.Component.AddBlock(block);
+    }
+
+    private async void BlockSetuped(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+            ModalParameters reultParams = (ModalParameters)result.Data;
+            MPageBlock block = reultParams.Get<MPageBlock>("Block").BinaryDeepClone();
+            Group.Component.AddBlock(block);
+        }
+
+
+        ComponentPage.ShowBtnPannel(true);
+    }
+
+
+}

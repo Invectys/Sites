@@ -1,0 +1,48 @@
+﻿@inherits CModalTemplete
+@inject YourSpace.Services.ISGroupsView SGroupView
+
+<div class="d-flex flex-row flex-wrap justify-content-center">
+    @RenderListViewDisplay()
+</div>
+
+@*<Button1 OnClick="Continue">Continue</Button1>*@
+
+@code {
+
+
+    private MBlocksGroup _group  = new MBlocksGroup();
+
+    public RenderFragment RenderListViewDisplay() => builder =>
+    {
+        foreach (var mode in SGroupView.GetGroups())
+        {
+            builder.OpenComponent(0, mode.Value.ViewModeComponentDisplay);
+            builder.AddAttribute(1, "ViewMode", mode.Key);
+            builder.AddAttribute(2, "OnSelect", EventCallback.Factory.Create<MSelectGroupClick>(this,Select));
+            builder.CloseComponent();
+        }
+    };
+
+
+    public static new int GetDefaultModalId() => 1;
+
+    private CGroupDisplay _selectedElement;
+
+    private void Select(MSelectGroupClick click)
+    {
+        if(_selectedElement != null)
+        {
+            _selectedElement.SetSelectState(false);
+        }
+        _group.ViewMode = click.GroupView;
+        _selectedElement = click.Component;
+        _selectedElement.SetSelectState(true);
+        ModalParameters.Add("Group", _group);
+        Continue();
+    }
+
+    private void Continue()
+    {
+        Close(ModalResult.OK(ModalParameters));
+    }
+}

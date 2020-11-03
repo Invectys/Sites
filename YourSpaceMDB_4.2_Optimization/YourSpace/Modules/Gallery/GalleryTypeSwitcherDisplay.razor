@@ -1,0 +1,13 @@
+﻿@inject IStringLocalizer<GalleryTypeSwitcherDisplay> L
+
+<div class="d-flex flex-row">
+    <button @onclick="()=>Gallery.GalleryType = GalleryType.User" class="btn btn-primary flex-fill">@L["User"]</button>
+    <button @onclick="()=>Gallery.GalleryType = GalleryType.Common" class="btn btn-primary flex-fill">@L["Common"]</button>
+</div>
+
+@code {
+
+    [Parameter] public CGallery Gallery { get; set; }
+
+    
+}

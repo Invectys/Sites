@@ -1,0 +1,34 @@
+﻿@page "/all"
+@inject IStringLocalizer<PagesRating> L
+
+<div class="d-flex justify-content-center">
+    <h5 class="text-info py-4 px-2">@L["Click on the picture to go to the page"] </h5>
+    <br />
+</div>
+<div class="d-flex flex-column">
+    @if(viewer != null)
+    {
+        <PagesList Pages="viewer.GetPage(0)" Class="col col-6"></PagesList>
+    }else
+    {
+        <Loading></Loading>
+    }
+</div>
+
+<div class="py-4"></div>
+<div class="py-4"></div>
+
+@code {
+
+    BookViewer<MPageInfo> viewer;
+    [Inject] protected ISUsers SUsers { get; set; }
+    [Inject] protected ISPages SPages { get; set; }
+    [Inject] protected ISThingCounter SMark { get; set; }
+    [Inject] protected ISPagesRating SRating { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var rating = await SRating.GetRating();
+        viewer = new BookViewer<MPageInfo>(rating, 5);
+    }
+}

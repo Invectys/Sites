@@ -1,0 +1,39 @@
+﻿@inject IStringLocalizer<EditUserForm> L
+@*@inherits OwningComponentBase<ISUsersModeration>*@
+
+<EditForm Model="_mEditUser" OnValidSubmit="ValidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <MyInputText @bind-Value="_mEditUser.FirstName" Label="@L["First name"]"></MyInputText>
+    <MyInputText @bind-Value="_mEditUser.LastName" Label="@L["Last name"]"></MyInputText>
+    <MyInputText @bind-Value="_mEditUser.Email" Label="@L["Email"]" ></MyInputText>
+    <Button1 Submit="true">@L["Continue"]</Button1>
+</EditForm>
+
+
+
+
+@code {
+    [Parameter] public EventCallback onSubmit { get; set; }
+    [Parameter] public string UserId { get; set; }
+
+    //[Inject] protected ISUsersModeration SUsersModeration { get; set; }
+
+    [Inject] protected ISUsersModeration Service { get; set; }
+    private YourSpace.Modules.Moderation.Models.MEditUser _mEditUser = new MEditUser();
+
+
+    protected async Task ValidSubmit()
+    {
+        await Service.EditUser(UserId, _mEditUser);
+        await onSubmit.InvokeAsync(this);
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        //Service = (ISUsersModeration)ScopedServices.GetService(typeof(ISUsersModeration));
+        _mEditUser = await Service.GetEditUser(UserId);
+    }
+
+
+}

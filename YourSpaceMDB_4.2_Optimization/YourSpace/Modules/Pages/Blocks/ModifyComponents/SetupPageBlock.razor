@@ -1,0 +1,30 @@
+﻿@inherits CSetupPageBlock
+
+@using System.Reflection
+@using YourSpace.Components
+
+
+@foreach (Setting setting in SettingsForSetting)
+{
+
+    string name = setting.Property.Name;
+    if (name.StartsWith("Image"))
+    {
+        @(Render<InputImage,string>(setting))
+    }
+    else if (name.StartsWith("Text"))
+    {
+        @(Render<MyInputTextArea, string>(setting))
+    }
+    else if (name.StartsWith("Music"))
+    {
+        @(Render<MyInputMusic,MMusic>(setting))
+    }
+    else
+    {
+        @(Render<MyInputText, string>(setting))
+    }
+
+}
+
+

@@ -1,0 +1,17 @@
+﻿@page
+@model ConfirmEmailModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<ConfirmEmailPage> L
+@{
+    ViewData["Title"] = "Confirm email";
+}
+
+@if (Model.Succeeded)
+{
+    <h1>@L["AccountConfirmed"]</h1>
+    <a href="/identity/account/Login">@L["Sign In"]</a>
+}
+else
+{
+    <h1>@L["AccountNotConfirmed"]</h1>
+}
+

@@ -1,0 +1,37 @@
+﻿@inherits CModalTemplete
+@inject IStringLocalizer<DeleteRole> L
+
+<EditForm Model="@_deleteRole" OnValidSubmit="ValidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <MyInputRole CurrentRole="User" Label="@L["Set role for users that have deleted role"]"></MyInputRole>
+    <button type="submit" class="btn btn-primary">@L["Delete"]</button>
+</EditForm>
+
+@code {
+
+    [Parameter] public string Role { get; set; }
+    [Inject] public ISRoles SRoles { get; set; }
+
+    private MDeleteRole _deleteRole = new MDeleteRole();
+
+    class MDeleteRole
+    {
+        public string RoleForUsers { get; set; }
+    }
+
+    public static new int GetDefaultModalId() => 1;
+
+    async void ValidSubmit()
+    {
+        await SRoles.DeleteRole(Role, _deleteRole.RoleForUsers);
+    }
+
+    protected override void OnInitialized()
+    {
+        Role = ModalParameters.Get<string>("Role");
+    }
+
+
+
+}

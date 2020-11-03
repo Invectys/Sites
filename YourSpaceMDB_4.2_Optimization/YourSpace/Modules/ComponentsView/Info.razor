@@ -1,0 +1,21 @@
+﻿@inherits CModalTemplete
+
+@Message
+<button class="btn btn-success" @onclick="Ok">Ok</button>
+
+@code {
+
+    public string  Message { get; set; }
+    protected override void OnInitialized()
+    {
+        Message = ModalParameters.Get<string>("Message");
+    }
+
+    void Ok()
+    {
+        Close(ModalResult.OK(""));
+    }
+
+
+    public static new int GetDefaultModalId() => 3 ;
+}

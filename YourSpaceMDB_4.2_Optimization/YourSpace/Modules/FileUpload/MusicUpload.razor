@@ -1,0 +1,91 @@
+﻿@inherits CFileUpload
+@inject IStringLocalizer<MusicUpload> L
+
+<div class="d-flex flex-column justify-content-center">
+    <div class="d-flex flex-column">
+        <div class="text-warning">@Message</div>
+        <EditForm Model="_music" OnValidSubmit="Submit">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <ValidationSummary></ValidationSummary>
+            <MyInputFile OnChange="LoadFile" Accept="@InputAccept"></MyInputFile>
+            <MyInputText @bind-Value="_music.Name" Label="@L["Name"]"></MyInputText>
+            <InputImage @bind-Value="_music.Image" Label="@L["Image"]"></InputImage>
+            <button type="submit" class="btn btn-primary">@L["Continue"]</button>
+        </EditForm>
+        @if (isLoading)
+        {
+            <Loading></Loading>
+        }
+        else if (_music.Path != null)
+        {
+            <MusicPlayer PlayerId="Uploaded-music-new" Music="_music" OnAccountNavigate="AccountNavigate"></MusicPlayer>
+        }
+    </div>
+
+    
+
+</div>
+
+@code
+{
+    [CascadingParameter] protected Task<AuthenticationState> Auth { get; set; }
+    [Inject] protected Microsoft.AspNetCore.Identity.UserManager<YourSpace.Areas.Identity.MIdentityUser> UserManager { get; set; }
+    [Inject] protected ISMusic SMusic { get; set; }
+    [Inject] protected ISUserProfile SUser { get; set; }
+
+    private YourSpace.Modules.Music.MMusic _music = new Music.MMusic();
+
+    public static new int GetDefaultModalId() => 3;
+
+    public override void onFileLoaded(string loadedFilePath,bool successful)
+    {
+        var values = FileNameParser.GetInstance().GetFileNameValues(loadedFilePath);
+        _music.Id = values.Id;
+        _music.Path = loadedFilePath;
+    }
+
+    public override bool CustomCheckFile(string path)
+    {
+        return true;
+    }
+
+    async void Submit()
+    {
+        if(!isLoading)
+        {
+            var user = (await AuthenticationStateTask).User;
+            var mUser = await SUser.GetUser(user);
+            _music.UserId = mUser.Id;
+            _music.Author = mUser.GetFullName();
+            _music.UserName = mUser.UserName;
+            await SMusic.AddMusic(_music);
+        }
+        Close(ModalResult.OK("ok"));
+    }
+
+    public override void HandleDataType()
+    {
+        base.HandleDataType();
+        _fileType = FileType.Music;
+        AcceptMimes = new string[]
+        {
+            "audio/mpeg"
+        };
+        MaxSize = Options.Value.MaxMusicSize;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var claims = (await Auth).User;
+        var user = await UserManager.GetUserAsync(claims);
+        _music.Author = user.GetFullName();
+    }
+
+
+    void AccountNavigate()
+    {
+        Close(ModalResult.Cancel());
+    }
+
+
+}

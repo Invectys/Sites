@@ -1,0 +1,21 @@
+﻿@page
+@model LogoutModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<LogOut> L
+@{
+    ViewData["Title"] = "Log out";
+}
+
+@if (HttpContext.User.Identity.IsAuthenticated)
+{
+    <div class="d-flex justify-content-center align-items-center" >
+    
+        <form method="post">
+            <label>@L["Logout from app"]</label>
+            <button type="submit" class="btn btn-danger">@L["Yes"]</button>
+        </form>
+    </div>
+}
+else
+{
+    <lablel class="text-info">@L["You are logged out of the application"] </lablel>
+}

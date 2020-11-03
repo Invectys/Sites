@@ -1,0 +1,44 @@
+﻿@inject IStringLocalizer<MyInputFile> L
+
+<button type="button" class="btn btn-primary" @onclick="Click">
+    @Text
+</button>
+<div id="@_id" class="d-none">
+    <InputFile OnChange="LoadFiles" accept="@Accept"></InputFile>
+</div>
+
+
+
+@code {
+    [Parameter] public string Accept { get; set; }
+    [Parameter] public string Text { get; set; }
+    [Parameter] public EventCallback<IFileListEntry> OnChange { get; set; }
+
+    [Inject] protected IJSRuntime JSRuntime { get; set; }
+
+    private string _id;
+
+    void LoadFiles(IFileListEntry[] files)
+    {
+        var file = files[0];
+        if(file == null)
+        {
+            return;
+        }
+        OnChange.InvokeAsync(file);
+    }
+
+    async void Click()
+    {
+        await JSRuntime.InvokeVoidAsync("SelectFile", _id);
+    }
+
+
+    protected override void OnInitialized()
+    {
+        _id = "file" + DateTime.Now.Ticks;
+        if (Text == null)
+            Text = L["Browse"];
+    }
+
+}

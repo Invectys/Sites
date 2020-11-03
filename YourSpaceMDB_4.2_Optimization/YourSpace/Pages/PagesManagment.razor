@@ -1,0 +1,16 @@
+﻿@page "/mypages"
+@attribute [Authorize]
+
+
+@if (OwnPages == null)
+{
+   <Loading></Loading>
+}
+else
+{
+
+    <div class="row px-4">
+        <PagesList Pages="OwnPages" ShowEditPage="true" Class="col col-6"></PagesList>
+    </div>
+}
+

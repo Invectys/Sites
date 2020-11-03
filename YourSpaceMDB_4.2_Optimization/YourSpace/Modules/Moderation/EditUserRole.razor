@@ -1,0 +1,13 @@
+﻿@inherits CModalTemplete
+@inject IStringLocalizer<EditUserRole> L
+
+<EditForm Model="_editUserRole" OnValidSubmit="Submit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    
+    <MyInputRole @bind-Value="_editUserRole.Role" Label="@L["Select role"]" UserId="@UserId" ></MyInputRole>
+    <MyInputCheckBox @bind-Value="_editUserRole.UpdateProfile" Label="@L["Update profile?"]"></MyInputCheckBox>
+
+    <button type="submit" class="btn btn-primary">@L["Continue"]</button>
+</EditForm>
+

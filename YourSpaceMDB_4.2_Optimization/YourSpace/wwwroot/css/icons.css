@@ -1,0 +1,88 @@
+﻿.icon {
+    height: 64px;
+    width: 64px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icon-sm {
+    height: 45px;
+    width: 45px;
+}
+
+@media(max-width: 768px) {
+    .icon {
+        height: 52px;
+        width: 52px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .icon-sm {
+        height: 25px;
+        width: 25px;
+    }
+}
+
+.icon-edit {
+    background-image: url(/dist/img/svg/edit.svg)
+}
+
+.icon-trash {
+    background-image: url(/dist/img/svg/trash.svg)
+}
+
+.icon-plus {
+    background-image: url(/dist/img/svg/plus.svg)
+}
+
+.icon-orange-like {
+    background-image: url(/dist/img/svg/OrangeLike.svg)
+}
+
+.icon-black-like {
+    background-image: url(/dist/img/svg/BlackLike.svg)
+}
+
+.icon-red-settings {
+    background-image: url(/dist/img/svg/settings_red.svg)
+}
+
+.icon-man {
+    background-image: url(/dist/img/svg/user.svg)
+}
+
+.icon-settings {
+    background-image: url(/dist/img/svg/settings.svg)
+}
+
+.icon-x-red {
+    background-image: url(/dist/img/svg/x_red.svg)
+}
+
+.icon-home-orange {
+    background-image: url(/dist/img/svg/home-orange.svg)
+}
+
+.icon-book-open-orange {
+    background-image: url(/dist/img/svg/book-open-orange.svg)
+}
+
+.icon-home {
+    background-image: url(/dist/img/svg/home.svg)
+}
+
+.icon-book-open {
+    background-image: url(/dist/img/svg/book-open.svg)
+}
+
+.icon-fast-forward {
+    background-image: url(/dist/img/svg/fast-forward.svg)
+}
+
+.icon-chevrons-up {
+    background-image: url(/dist/img/svg/chevrons-up.svg)
+}
+
+.icon-chevrons-down {
+    background-image: url(/dist/img/svg/chevrons-down.svg)
+}

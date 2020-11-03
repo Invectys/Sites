@@ -1,0 +1,27 @@
+﻿@inherits InputText
+
+
+
+<div class="form-group">
+    <label>@Label</label>
+    <textarea type="email" class="form-control rounded-0 @CssClass" id="@Label"
+              @attributes="AdditionalAttributes" value="@CurrentValue"
+              @oninput="ChangeEventArgs" />
+</div>  
+
+@code
+{
+
+    [Parameter] public string Label { get; set; }
+
+    public EventCallback<ChangeEventArgs> ChangeEventArgs
+    {
+        get
+        {
+            return EventCallback.Factory.CreateBinder<string>(
+                         this, __value => CurrentValueAsString = __value,
+                         CurrentValueAsString);
+        }
+    }
+
+}

@@ -1,0 +1,43 @@
+﻿@page "/moderation"
+@inject IStringLocalizer<ModerationIndex> L
+@attribute [Authorize(Roles ="Admin")]
+
+<ModerationPannel></ModerationPannel>
+
+<button class="btn btn-primary" @onclick="LoadCommonImages">@L["Load common images"]</button>
+<button class="btn btn-primary" @onclick="LoadCommonMusic">@L["Load common music"]</button>
+
+@code
+{
+
+    [Inject] public ISModal SModal { get; set; }
+
+    void LoadCommonImages()
+    {
+        var modalParams = new ModalParameters();
+        modalParams.Add("GalleryType", GalleryType.Common);
+
+        SModal.Show<ImageUpload>(L["Upload Image"], modalParams, ViewStorageApp.UploadNewImageModalOptions, LoadCommonImageResult);
+    }
+    void LoadCommonImageResult(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+
+        }
+    }
+
+    void LoadCommonMusic()
+    {
+        var modalParams = new ModalParameters();
+        modalParams.Add("GalleryType", GalleryType.Common);
+        SModal.Show<MusicUpload>(L["Upload Music"], modalParams, ViewStorageApp.UploadNewImageModalOptions, LoadCommonMusicResult);
+    }
+    void LoadCommonMusicResult(ModalResult result)
+    {
+        if (!result.Cancelled)
+        {
+
+        }
+    }
+}

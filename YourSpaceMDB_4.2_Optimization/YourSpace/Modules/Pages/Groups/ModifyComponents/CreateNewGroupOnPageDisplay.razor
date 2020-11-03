@@ -1,0 +1,25 @@
+﻿@inject YourSpace.Services.ISModal SModal
+@inject IStringLocalizer<CreateNewGroupOnPageDisplay> L
+
+<button @onclick="CreateNewGroup" class="btn btn-primary flex-fill">@L["New View"]</button>
+
+@code {
+
+    [Parameter] public CPage ComponentPage { get; set; }
+
+    void CreateNewGroup()
+    {
+        ComponentPage.HideBtnPannel();
+        SModal.Show<CreateGroup>(L["New View"], new ModalParameters(), GroupCreated);
+    }
+
+    void GroupCreated(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+            ComponentPage.ShowBtnPannel();
+            MBlocksGroup newGroup = ((ModalParameters)result.Data).Get<MBlocksGroup>("Group");
+            ComponentPage.AddMainGroup(newGroup);
+        }
+    }
+}

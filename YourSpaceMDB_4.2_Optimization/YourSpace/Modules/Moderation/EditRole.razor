@@ -1,0 +1,38 @@
+﻿@inherits CModalTemplete
+@inject IStringLocalizer<CreateNewRole> L
+@using Microsoft.AspNetCore.Identity; 
+@using YourSpace.Areas.Identity;
+
+<EditForm Model="_newRole" OnValidSubmit="ValidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <MyInputNumber @bind-Value="_newRole.MaxPagesAmount" Label="@L["Max pages"]"></MyInputNumber>
+    <MyInputNumber @bind-Value="_newRole.PageMaxBlocks" Label="@L["Max blocks"]"></MyInputNumber>
+    <MyInputNumber @bind-Value="_newRole.PageMaxMainGroups" Label="@L["Max main groups"]"></MyInputNumber>
+    <MyInputNumber @bind-Value="_newRole.PageMaxGroupDepth" Label="@L["Max groups depth"]"></MyInputNumber>
+    <InputImage @bind-Value="_newRole.StartProfileImage" Label="@L["Role Image"]"></InputImage>
+    <button type="submit" class="btn btn-primary">@L["Edit"]</button>
+</EditForm>
+
+
+
+@code {
+
+    [Inject] public ISRoles SRoles { get; set; }
+    private MIdentityRole _newRole = new MIdentityRole();
+
+    public static new int GetDefaultModalId() => 1;
+
+
+    protected override void OnInitialized()
+    {
+        _newRole = ModalParameters.Get<MIdentityRole>("Role");
+    }
+
+    async Task ValidSubmit()
+    {
+        Close(ModalResult.OK(ModalParameters));
+        await SRoles.UpdateRole(_newRole);
+    }
+
+}

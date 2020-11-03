@@ -1,0 +1,44 @@
+﻿@inherits LayoutComponentBase
+@inject IStringLocalizer<MainLayout> L
+@inject YourSpace.Modules.Browser.SBrowser SBrowser
+
+<Modal ModalId="1"></Modal>
+<Modal ModalId="2"></Modal>
+<Modal ModalId="3"></Modal>
+<Modal ModalId="4"></Modal>
+<Modal ModalId="5"></Modal>
+
+<div class="main">
+
+    <TopPanelDisplay />
+
+
+    <div class="d-flex flex-column">
+        @Body
+    </div>
+
+
+    <div class="py-4"></div>
+    <div class="py-4"></div>
+    <div class="py-4"></div>
+    <div class="py-4"></div>
+
+</div>
+
+
+@code
+{
+    [Inject] protected IJSRuntime JSRuntime { get; set; }
+    YourSpace.Modules.Browser.EDeviceResolution resolution;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+
+        //JSRuntime.InvokeVoidAsync("InitAllAudioPlayersMeta_Execute");
+
+    }
+
+    
+
+
+}

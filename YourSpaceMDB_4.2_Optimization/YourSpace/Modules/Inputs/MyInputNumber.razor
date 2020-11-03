@@ -1,0 +1,24 @@
+﻿@inherits InputNumber<int>
+
+<div class="d-flex flex-row justify-content-center m-3">
+    <label class="flex-shrink-0 mx-2">@Label</label>
+    <input class="@CssClass form-control    mx-2" type="number"
+           @attributes="AdditionalAttributes" value="@CurrentValue"
+           @oninput="ChangeEventArgs" />
+</div>
+
+@code
+{
+    [Parameter] public string Label { get; set; }
+
+
+    public EventCallback<ChangeEventArgs> ChangeEventArgs
+    {
+        get
+        {
+            return EventCallback.Factory.CreateBinder<string>(
+                         this, __value => CurrentValueAsString = __value,
+                         CurrentValueAsString);
+        }
+    }
+}

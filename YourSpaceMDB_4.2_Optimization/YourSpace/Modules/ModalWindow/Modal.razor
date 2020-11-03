@@ -1,0 +1,33 @@
+﻿@inject IStringLocalizer<Modal> L
+
+
+<div class="blazored-modal-container  @ComponentPosition @(IsVisible ? "blazored-modal-active" : string.Empty)" 
+     style="overflow-y:scroll;">
+    <div class="blazored-modal-overlay" @onclick="HandleBackgroundClick"></div>
+
+    <div class="blazored-modal-wrapper @ComponentSize px-0 m-auto">
+        <div class="@ComponentStyle col-sm-12">
+            @if (!ComponentHideHeader)
+            {
+                <div class="blazored-modal-header">
+                    <h3 class="blazored-modal-title">@L[Title]</h3>
+                    @if (!ComponentHideCloseButton)
+                    {
+                        <button type="button" class="blazored-modal-close" @onclick="@(() => ModalService.Cancel(ModalId))">
+                            <span>&times;</span>
+                        </button>
+                    }
+                </div>
+            }
+            <div class="blazored-modal-content">
+                <CascadingValue Value="this">
+                    <CascadingValue Value="@Parameters">
+                        @Content
+                    </CascadingValue>
+                </CascadingValue>
+            </div>
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,80 @@
+﻿@page "/admin"
+@attribute [Authorize(Roles = "Admin")]
+@inject IStringLocalizer<Admin> L
+
+
+    <!-- Classic tabs -->
+    <div class="classic-tabs mx-2">
+
+        <ul class="nav tabs-orange" id="myClassicTabOrange" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link  waves-light active show" id="profile-tab-classic-orange" data-toggle="tab" href="#profile-classic-orange"
+                   role="tab" aria-controls="profile-classic-orange" aria-selected="true">
+                    <object type="image/svg+xml" data="dist/img/svg/user.svg"></object>
+                    <br>@L["Users"]
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" id="follow-tab-classic-orange" data-toggle="tab" href="#follow-classic-orange"
+                   role="tab" aria-controls="follow-classic-orange" aria-selected="false">
+                    <i class="fas fa-heart fa-2x pb-2"
+                       aria-hidden="true"></i><br>@L["Follow"]
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" id="contact-tab-classic-orange" data-toggle="tab" href="#contact-classic-orange"
+                   role="tab" aria-controls="contact-classic-orange" aria-selected="false">
+                    <i class="fas fa-envelope fa-2x pb-2"
+                       aria-hidden="true"></i><br>@L["Contact"]
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" id="awesome-tab-classic-orange" data-toggle="tab" href="#awesome-classic-orange"
+                   role="tab" aria-controls="awesome-classic-orange" aria-selected="false">
+                    <i class="fas fa-star fa-2x pb-2"
+                       aria-hidden="true"></i><br>Be awesome
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content card" id="myClassicTabContentOrange">
+            <div class="tab-pane fade active show" id="profile-classic-orange" role="tabpanel" aria-labelledby="profile-tab-classic-orange">
+                <p>
+                  
+
+                </p>
+            </div>
+            <div class="tab-pane fade" id="follow-classic-orange" role="tabpanel" aria-labelledby="follow-tab-classic-orange">
+                <p>
+                   
+                </p>
+            </div>
+            <div class="tab-pane fade" id="contact-classic-orange" role="tabpanel" aria-labelledby="contact-tab-classic-orange">
+                <p>
+                   
+                </p>
+            </div>
+            <div class="tab-pane fade" id="awesome-classic-orange" role="tabpanel" aria-labelledby="awesome-tab-classic-orange">
+                <p>
+                   
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <!-- Classic tabs -->
+
+
+
+@code {
+
+    public int UsersPage { get; set; } = 0;
+    public List<YourSpace.Areas.Identity.MIdentityUser> Users { get; set; }
+
+    [Inject] public ISUsersModeration SModeration { get; set; }
+
+    protected override void OnInitialized()
+    {
+       // Users = SModeration.GetUsers(UsersPage);
+    }
+}

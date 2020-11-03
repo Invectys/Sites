@@ -1,0 +1,14 @@
+﻿@page
+@model DeleteAccountModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<DeleteAccount> L
+@{
+    ViewData["Title"] = "Delete Account";
+}
+
+<div class="d-flex justify-content-center align-items-center" >
+
+    <form method="post">
+        <label>@L["Delete my account"]</label>
+        <button type="submit" class="btn btn-danger">@L["Yes"]</button>
+    </form>
+</div>

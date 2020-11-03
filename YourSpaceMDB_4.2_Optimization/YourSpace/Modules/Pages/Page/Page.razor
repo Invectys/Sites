@@ -1,0 +1,113 @@
+﻿@page "/{PageUrl}"
+@inherits CPage
+@inject IStringLocalizer<Page> L
+
+@if (PageValid)
+{
+
+    @RenderPage()
+
+    @*<div class="d-flex py-4"></div>
+    <div class="d-flex py-4"></div>
+    <div class="d-flex my-4"></div>
+    <div class="d-flex my-4"></div>*@
+
+    @if (PageOwner)
+    {
+        <div class="row fixed-bottom flex-fill bg-white justify-content-center order-1 ">
+            <button class="btn btn-primary m-1 col-sm-12 col-lg-6" @onclick="ChangeMode">@ChangeModeBtn</button>
+        </div>
+    }
+
+}
+else
+{
+    <NotFound></NotFound>
+}
+
+
+
+@code{
+
+    [Parameter] public string PageMode { get; set; } = EViewMode.Presentation.ToString();
+
+    public string ChangeModeBtn
+    {
+        get
+        {
+            if (ViewMode == EViewMode.Edit)
+            {
+                return L["View"];
+            }
+            else if (ViewMode == EViewMode.Presentation)
+            {
+                return L["Edit"];
+            }
+            return "";
+        }
+    }
+
+    public EViewMode ViewMode
+    {
+        get
+        {
+            if (PageMode == null) return EViewMode.Presentation;
+            Enum.TryParse(PageMode, out EViewMode viewMode);
+            return viewMode;
+        }
+        set
+        {
+            PageMode = value.ToString();
+        }
+    }
+
+    [Inject] protected ISPagesUrl sPagesUrl { get; set; }
+    [Inject] protected ISPagesUrl SUrl { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        SetMode(ViewMode);
+    }
+
+
+    void SetMode(EViewMode mode,bool update = false)
+    {
+        if (mode == EViewMode.Edit)
+        {
+            AddEditInputs = true;
+            ViewMode = EViewMode.Edit;
+        }
+        else if (mode == EViewMode.Presentation)
+        {
+            AddEditInputs = false;
+            ViewMode = EViewMode.Presentation;
+        }
+        if(update)
+            StateHasChanged();
+    }
+
+    void ChangeMode()
+    {
+        if (ViewMode == EViewMode.Edit)
+        {
+            SetMode(EViewMode.Presentation);
+        }
+        else if (ViewMode == EViewMode.Presentation)
+        {
+            SetMode(EViewMode.Edit);
+        }
+    }
+
+    public enum EViewMode
+    {
+        Presentation,
+        Edit
+    }
+}

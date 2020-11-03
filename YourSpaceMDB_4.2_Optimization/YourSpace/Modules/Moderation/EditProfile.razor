@@ -1,0 +1,35 @@
+﻿@inherits CModalTemplete
+@inject IStringLocalizer<EditProfile> L
+@using YourSpace.Areas.Identity
+
+<EditForm Model="_mUserProfile" OnValidSubmit="Submit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <InputImage @bind-Value="_mUserProfile.ProfileImage" Label="@L["Profile image"]"></InputImage>
+    <button type="submit" class="btn btn-primary">@L["Change"]</button>
+</EditForm>
+
+@code
+{
+
+    public string UserId { get; set; }
+    public static new int GetDefaultModalId() => 1;
+
+    private MUserProfile _mUserProfile = new MUserProfile();
+    [Inject] protected ISUserProfile SUserProfile { get; set; }
+
+    protected override void OnInitialized()
+    {
+        UserId = ModalParameters.Get<string>("UserId");
+        _mUserProfile = SUserProfile.GetProfile(UserId);
+    }
+
+    async void Submit()
+    {
+        await SUserProfile.UpdateProfile(_mUserProfile);
+
+        Close(ModalResult.OK("ok"));
+    }
+
+
+}

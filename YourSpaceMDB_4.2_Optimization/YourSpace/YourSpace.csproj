@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-YourSpace-D39BD945-8468-4162-9FEC-197CDB2B0C00</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\LabelStrings.en.resx" />
+    <EmbeddedResource Remove="Resources\Modules\ModalWindow\Modal.en.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="!Configuration\EmailMessages\ConfirmEmailMessage.html" />
+    <None Remove="settings.ini" />
+  </ItemGroup>
+
+  
+
+  <ItemGroup>
+    <Content Include="!Configuration\EmailMessages\ConfirmEmailMessage.html">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="!Configuration\settings.Development.ini" />
+    <Content Include="!Configuration\settings.ini">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BlazorInputFile" Version="0.2.0" />
+    <PackageReference Include="MailKit" Version="2.8.0" />
+    <PackageReference Include="Microsoft.AspNetCore.AzureKeyVault.HostingStartup" Version="2.0.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.SnapshotDebugger.AzureAppServices.Standalone" Version="1.2.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="Winista.MimeDetect" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\AccountManage\Components\" />
+    <Folder Include="Resources\Areas\Identity\Pages\Account\Manage\" />
+    <Folder Include="Resources\Modules\Blocks\" />
+    <Folder Include="Resources\Modules\Localization\" />
+    <Folder Include="wwwroot\Gallery\" />
+    <Folder Include="wwwroot\audio-player\" />
+    <Folder Include="wwwroot\users\NewFolder\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Resources\Modules\ModalWindow\Modal.en.resx" />
+  </ItemGroup>
+
+  
+
+  <ItemGroup>
+    <Compile Update="Resources\ValidationMessages\ValidationMessages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ValidationMessages.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Components\CSetupPageBlock.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Components\CSetupPageBlock.ru.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ValidationMessages\ValidationMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

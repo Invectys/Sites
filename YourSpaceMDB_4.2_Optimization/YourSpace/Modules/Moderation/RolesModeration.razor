@@ -1,0 +1,130 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using YourSpace.Areas.Identity;
+
+@page "/moderation/roles"
+@attribute [Authorize(Roles = "Admin")]
+@inject IStringLocalizer<RolesModeration> L 
+
+<div class="md-form mt-0">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search"
+            @bind-value="_filterName">
+</div>
+<button class="btn btn-primary" @onclick="SearchBtn">@L["Search/Reload"]</button>
+
+<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th class="th-sm">
+                @L["Role name"]
+            </th>
+            <th class="th-sm">
+                @L["Max pages"]
+            </th>
+            <th class="th-sm">
+                @L["Edit"]
+            </th>
+            <th class="th-sm">
+                @L["Delete"]
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in _rolesBook.GetCurrentPage())
+        {
+            <tr>
+                <td>@role.Name</td>
+                <td>@role.MaxPagesAmount</td>
+                <td>
+                    <button class="btn btn-primary" @onclick="()=> { EditRole(role); }">@L["Edit"]</button>
+                </td>
+                <td>
+                    @if(SRoles.CanDeleteRole(role.Name))
+                    {
+                        <button class="btn btn-danger" @onclick="()=> { DeleteRole(role); }">@L["Delete"]</button>
+                    }
+                    else
+                    {
+                        <span>@L["You cant delete basic role"]</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<button class="btn btn-primary" @onclick="CreateNewRole">@L["Create new role"]</button>
+
+<Pagination Next="_rolesBook.NextPage" Previous="_rolesBook.PreviousPage"></Pagination>
+
+
+
+@code
+{
+
+    [Inject] protected ISModal SModal { get; set; }
+    [Inject] protected ISRoles SRoles { get; set; }
+    [Inject] protected Microsoft.AspNetCore.Identity.RoleManager<MIdentityRole> RoleManager { get; set; }
+
+    private string _filterName = "";
+    private BookViewer<MIdentityRole> _rolesBook;
+    private List<MIdentityRole> _rolesList = new List<MIdentityRole>();
+
+    protected override void OnInitialized()
+    {
+        LoadRoles();
+    }
+
+    void LoadRoles()
+    {
+        _rolesList = RoleManager.Roles.Where(r=>r.Name.Contains(_filterName)).ToList();
+        _rolesBook = new BookViewer<MIdentityRole>(_rolesList, 5);
+        StateHasChanged();
+    }
+    void EditRole(MIdentityRole role)
+    {
+        var mp = new ModalParameters();
+        mp.Add("Role", role);
+
+        SModal.Show<EditRole>(L["Edit role"], mp, ViewStorageApp.EditRoleModalOptions, RoleEdited);
+    }
+
+    void RoleEdited(ModalResult result)
+    {
+        if (!result.Cancelled)
+        {
+            LoadRoles();
+        }
+    }
+
+    void CreateNewRole()
+    {
+        SModal.Show<CreateNewRole>(L["New Role"], new ModalParameters(), RoleCreated);
+    }
+
+    void RoleCreated(ModalResult result)
+    {
+        if (!result.Cancelled)
+        {
+            LoadRoles();
+        }
+    }
+
+    void DeleteRole(MIdentityRole role)
+    {
+        var mp = new ModalParameters();
+        mp.Add("Role", role.Name);
+        SModal.Show<DeleteRole>(L["Delete role"], mp, ViewStorageApp.EditRoleModalOptions, RoleDeleted);
+    }
+
+    void RoleDeleted(ModalResult result)
+    {
+        if (!result.Cancelled)
+        {
+            LoadRoles();
+        }
+    }
+
+    void SearchBtn()
+    {
+        LoadRoles();
+    }
+}

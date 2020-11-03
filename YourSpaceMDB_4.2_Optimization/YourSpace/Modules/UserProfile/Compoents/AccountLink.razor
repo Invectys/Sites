@@ -1,0 +1,19 @@
+﻿<a href="@Url" class="@Class" @onclick="OnClick">@ChildContent</a>
+
+
+
+@code {
+
+    [Parameter] public string UserName { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+    [Parameter] public string Class { get; set; }
+    [Parameter] public EventCallback OnClick { get; set; }
+
+    public string Url
+    {
+        get
+        {
+            return "/account/" + UserName;
+        }
+    }
+}

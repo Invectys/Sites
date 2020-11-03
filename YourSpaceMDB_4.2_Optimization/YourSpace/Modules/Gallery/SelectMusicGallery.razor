@@ -1,0 +1,51 @@
+﻿@inherits CGallery
+@using YourSpace.Modules.Music
+ 
+<GalleryTopMenu Gallery="this"></GalleryTopMenu>
+
+<div class="d-flex flex-column">
+    @for(int i=0; i < _musics.Count; i++)
+    {
+        var m = _musics[i];
+        int ind = i;
+        string playerId = "Audio-elem-" + ind;
+        <div class="d-flex flex-row select" @onclick="() => SelectMusic(m)">
+            <MusicPlayer PlayerId="@playerId" Music="m" Class=""></MusicPlayer>
+        </div>
+        
+    }
+</div>
+
+@code {
+
+    [Inject] public ISMusic SMusic { get; set; }
+
+    public static new int GetDefaultModalId() => 2;
+
+    private List<MMusic> _musics = new List<MMusic>();
+
+
+    void SelectMusic(MMusic music)
+    {
+        ModalParameters.Add("SelectedMusic", music);
+        Close(ModalResult.OK(ModalParameters));
+    }
+
+    public override void CustomFilesActions()
+    {
+        foreach(var f in FilesPaths)
+        {
+            var values = FileNameParser.GetInstance().GetFileNameValues(f);
+            bool valid = SMusic.TryGetMusic(values.Id,out MMusic m);
+            if(valid)_musics.Add(m);
+        }
+    }
+
+
+    public override void HandleDataType()
+    {
+        _fileType = FileType.Music;
+        _galaryType = GalleryType.User;
+        LoadNewFileTypeComponent = typeof(MusicUpload);
+    }
+}

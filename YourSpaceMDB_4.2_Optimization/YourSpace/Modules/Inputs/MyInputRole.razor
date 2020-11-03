@@ -1,0 +1,60 @@
+﻿@using YourSpace.Areas.Identity;
+@using Microsoft.AspNetCore.Identity;
+@inherits InputBase<string>
+
+<div class="d-flex flex-row justify-content-center m-3">
+    <label class="flex-shrink-0 mx-2">@Label</label>
+    <select @bind="CurrentValueAsString" class="browser-default custom-select">
+        @foreach (var role in _roles)
+        {
+            bool check = role == CurrentRole;
+            @if (check)
+            {
+                <option value="@role" selected>@role</option>
+            }
+            else
+            {
+                <option value="@role">@role</option>
+            }
+        }
+    </select>
+
+</div>
+
+
+@code {
+
+    [Inject] public RoleManager<MIdentityRole> RoleManager { get; set; }
+    [Inject] public ISRoles SRoles { get; set; }
+
+    [Parameter] public string UserId { get; set; } = "";
+    [Parameter] public string CurrentRole { get; set; } = "User";
+    [Parameter] public string Label { get; set; } = "";
+
+
+    private List<string> _roles { get; set; } = new List<string>();
+
+
+    protected override bool TryParseValueFromString(string value, out string result, out string validationErrorMessage)
+    {
+        validationErrorMessage = "";
+        result = value;
+        return true;
+    }
+
+    protected override string FormatValueAsString(string value)
+    {
+        return value;
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        _roles = await SRoles.GetAllNames();
+        if(UserId != "")
+        {
+            CurrentRole = (await SRoles.GetRole(UserId)).Name;
+        }
+    }
+
+}

@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+     <a class="p-2 text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Привет @UserManager.GetUserName(User)!</a>
+    
+}
+else
+{
+    @*<a class="p-2 text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+
+    </a>
+    <a class="p-2 text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">
+
+    </a>*@
+}
+

@@ -1,0 +1,43 @@
+﻿@inherits CModalTemplete
+@inject IStringLocalizer<YouAreSure> L
+
+
+
+<div class="d-flex align-items-center flex-column">
+    <div class="mw-90vw">
+        @Message
+    </div>
+    <div class="align-self-end">
+        @L["Are you sure?"]
+    </div>
+    <div class="d-flex align-self-end flex-row">
+        <button class="btn btn-info" @onclick="Deny">@L["Back"]</button>
+        <button class="btn btn-danger" @onclick="Yes">@L["Yes"]</button>
+    </div>
+</div>
+
+
+
+@code {
+
+
+    [Parameter] public string Message { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Message = ModalParameters.Get<string>("Message");
+    }
+
+
+    void Yes()
+    {
+        Close(ModalResult.OK(ModalParameters));
+    }
+
+    void Deny()
+    {
+        Close(ModalResult.Cancel());
+    }
+
+    public static new int GetDefaultModalId() => 3;
+}

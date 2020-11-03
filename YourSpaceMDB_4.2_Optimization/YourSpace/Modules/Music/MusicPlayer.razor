@@ -1,0 +1,57 @@
+﻿@inherits CMusicPlayer
+
+
+<div id="@PlayerId" class="@Class d-flex flex-row flex-fill audioplayer bg-light align-items-center @Music.Id ">
+    <span class="d-none audioplayer-path">@Music.Path</span>
+    <span class="d-none audioplayer-Id">@Music.Id</span>
+    <div>
+		<img src="@Music.Image" class="player-img" />
+	</div>
+
+    <div class="audioplayer-state">
+        <div class="player-icon player-icon-pause"></div>
+    </div>
+
+    <div class="d-flex flex-column flex-fill">
+        <div class="d-flex ">
+            <div class="player-audio-name">@Music.Name</div>
+            <AccountLink UserName="@Music.UserName" Class="cursor-pointer text-link ml-auto" OnClick="OnAccountNavigate">
+                <div class="player-audio-author">@Music.Author</div>
+            </AccountLink>
+        </div>
+        <div class="player-bar-main ">
+            <div class="player-bar" style="width: 0%;"></div>
+        </div>
+    </div>
+
+    <div class="audioplayer-time px-2">
+        0:32/3:00
+    </div>
+</div>
+
+
+
+
+@code
+{
+
+    [Parameter] public EventCallback OnAccountNavigate { get; set; }
+
+
+    [CascadingParameter] private Task<AuthenticationState> Auth { get; set; }
+    [Inject] public Microsoft.AspNetCore.Identity.UserManager<YourSpace.Areas.Identity.MIdentityUser> SUsers { get; set; }
+    [Inject] public IJSRuntime JSRuntime { get; set; }
+    public string Author { get; set; }
+
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if(firstRender)
+        {
+            JSRuntime.InvokeVoidAsync("InitAudioPlayerDefaultPresentationById", PlayerId);
+        }
+
+    }
+
+
+}

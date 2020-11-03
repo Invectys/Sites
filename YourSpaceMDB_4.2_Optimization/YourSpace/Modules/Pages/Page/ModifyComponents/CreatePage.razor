@@ -1,0 +1,57 @@
+﻿@inherits CModalTemplete
+@inject IStringLocalizer<CreatePage> L
+@using YourSpace.Modules.Pages.Page
+@inject YourSpace.Services.ISPagesModifier SPagesModifier
+
+
+<EditForm Model="createPage" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator>
+    </DataAnnotationsValidator>
+    <ValidationSummary>
+    </ValidationSummary>
+    <div class="d-flex flex-column">
+        <ErrorText>@L[InfoMessage]</ErrorText>
+        <InfoText>@L["Your url = bluejour.net/"]@createPage.Url</InfoText>
+    </div>
+    <MyInputText id="name" @bind-Value="createPage.Url" Label="@L["Page id"]"></MyInputText>
+    <SetupPageBlock Block="createPage.DisplayBlock"></SetupPageBlock>
+
+    <Button1 Submit="true">@L["Continue"]</Button1>
+    <ErrorText>@L[InfoMessage]</ErrorText>
+</EditForm>
+
+
+
+
+@code {
+
+    public string InfoMessage { get; set; } = "";
+
+    private MCreatePage createPage = new MCreatePage();
+
+    [Inject] protected ISPagesUrl SPagesUrl { get; set; }
+
+    [CascadingParameter] private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+
+    public static new int GetDefaultModalId() => 1;
+
+    private async void HandleSubmit()
+    {
+        var user = (await authenticationStateTask).User;
+
+        CreatePageResult result = await SPagesModifier.CreateNewPage(createPage, user);
+        if(result.Succeeded)
+        {
+            Close(ModalResult.OK(result.Page));
+        }
+        else
+        {
+            InfoMessage = result.Errors[0];
+            StateHasChanged();
+        }
+
+    }
+
+
+}

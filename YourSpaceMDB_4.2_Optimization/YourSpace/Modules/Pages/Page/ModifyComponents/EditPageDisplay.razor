@@ -1,0 +1,54 @@
+﻿@inject YourSpace.Services.ISModal SModal
+@inject IStringLocalizer<EditPageDisplay> L
+
+ 
+<div class="icon icon-settings cursor-pointer" @onclick="OpenEditPage"></div>
+<div class="icon icon-trash cursor-pointer" @onclick="DeletePage"></div>
+
+
+
+@code {
+
+    [Inject] public ISPagesModifier SPagesModifier { get; set; }
+    [Inject] public ISPages SPages { get; set; }
+
+    [Parameter] public MPageCardBlock PageCard { get; set; }
+    [Parameter] public EventCallback Changed { get; set; }
+    [Parameter] public EventCallback PageDeleted { get; set; }
+    [Parameter] public string Class { get; set; }
+
+    void OpenEditPage()
+    {
+        ModalParameters parameters = new ModalParameters();
+        parameters.Add("PageCard", PageCard);
+        SModal.Show<EditPage>(L["Page settings"], parameters, ViewStorageApp.EditPageModalOptions, PageEdited);
+    }
+
+    void PageEdited(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+            if(Changed.HasDelegate)
+            {
+                Changed.InvokeAsync(this);
+            }
+        }
+    }
+
+
+    void DeletePage()
+    {
+        var p = new ModalParameters();
+        p.Add("Message", L["DeletePageMessage"].Value);
+        SModal.Show<YouAreSure>(L["Delete"].Value, p , DeletePageModal);
+    }
+
+    async void DeletePageModal(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+            await SPagesModifier.DeletePage(PageCard.Name);
+            await PageDeleted.InvokeAsync(this);
+        }
+    }
+}

@@ -1,0 +1,36 @@
+﻿<!-- Card -->
+<div class="card" @onclick="OnClick">
+
+    <!-- Card image -->
+    <div class="view overlay" >
+        <img class="card-img-top" src="@Image"
+             alt="Card image cap">
+        <a>
+            <div class="mask rgba-white-slight"></div>
+        </a>
+    </div>
+
+    <!-- Card content -->
+    <div class="card-body">
+
+        <!-- Title -->
+        <h4 class="card-title">@Title</h4>
+        <!-- Text -->
+        <p class="card-text">
+            @Description
+        </p>
+        <!-- Button -->
+        @*<a href="#" class="btn btn-primary">Button</a>*@
+
+    </div>
+
+</div>
+<!-- Card -->
+
+@code
+{
+    [Parameter] public EventCallback OnClick { get; set; }
+    [Parameter] public string Image { get; set; } = "";
+    [Parameter] public string Description { get; set; }
+    [Parameter] public string Title { get; set; }
+}

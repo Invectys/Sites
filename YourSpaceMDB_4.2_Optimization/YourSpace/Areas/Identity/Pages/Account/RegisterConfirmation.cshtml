@@ -1,0 +1,13 @@
+﻿@page
+@model RegisterConfirmationModel
+@inject Microsoft.Extensions.Localization.IStringLocalizer<RegisterConfirmationPage> L
+@{
+    ViewData["Title"] = "Register confirmation";
+}
+
+<h1>@L["RegisterConfirmationTitle"]</h1>
+
+@if(Model.DisplayConfirmAccountLink)
+{
+    <a href="@Model.EmailConfirmationUrl">Click</a>
+}

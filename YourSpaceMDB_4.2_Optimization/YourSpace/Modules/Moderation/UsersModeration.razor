@@ -1,0 +1,204 @@
+﻿@page "/moderation/users"
+@attribute [Authorize(Roles = "Admin")]
+@inject IStringLocalizer<UsersModeration> L
+
+<div class="md-form mt-0">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search" 
+           @bind-value="_filter.Email" >
+</div>
+<button class="btn btn-primary" @onclick="SearchBtn">@L["Search/Reload"]</button>
+<button class="btn btn-primary" @onclick="CreateUser">@L["Create user"]</button>
+
+<table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th class="th-sm">
+                @L["First name"]
+            </th>
+            <th class="th-sm">
+                @L["Last name"]
+            </th>
+            <th class="th-sm">
+                @L["Email"]
+            </th>
+            <th class="th-sm">
+                @L["Pages"]
+            </th>
+            <th class="th-sm">
+                @L["Role"]
+            </th>
+            <th class="th-sm">
+                @L["Edit"]
+            </th>
+            <th class="th-sm">
+                @L["Delete"]
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(UsersList != null)
+        {
+            @foreach (var user in UsersList)
+            {
+                string id = user.Id;
+            
+                <tr>
+                    <td><AccountLink UserName="@user.UserName">@user.FirstName</AccountLink></td>
+                    <td>@user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>
+                        @L["Pages"]
+                    </td>
+                    <td>
+                        <button class="btn btn-info" @onclick="() => EditRole(id)"> @L["Role"]</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info" @onclick="() => EditProfile(id)">@L["Profile"]</button>
+                        <button class="btn btn-info" @onclick="() => EditUser(id)">@L["User"]</button>
+                    </td>
+                    <td>
+                        @if(user.Email != "admin@gmail.com")
+                        {
+                            <button class="btn btn-danger" @onclick="() => DeleteUser(user)">@L["Delete"]</button>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <Loading></Loading>
+        }
+    </tbody>
+</table>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination pg-blue">
+        <li class="page-item btn btn-primary" @onclick="Previous">@L["Previous"]</li>
+        <li class="page-item btn btn-primary" @onclick="Next">@L["Next"]</li>
+    </ul>
+</nav>
+
+@code {
+
+    public int UsersPage { get; set; } = 0;
+    public int TotalPages { get; set; }
+    public List<YourSpace.Areas.Identity.MIdentityUser> UsersList { get; set; }
+
+    //[Inject] public ISPages SPages { get; set; }
+    [Inject] public ISUsersModeration SModeration { get; set; }
+    [Inject] public ISUsers SUsers { get; set; }
+    [Inject] public ISModal SModal { get; set; }
+
+    private YourSpace.Modules.Moderation.Models.MUserFilter _filter = new Models.MUserFilter();
+
+    public bool HasPrevious
+    {
+        get { return UsersPage > 0; }
+    }
+    public bool HasNext
+    {
+        get { return UsersPage < TotalPages; }
+    }
+
+    public async void Previous()
+    {
+        if (HasPrevious)
+        {
+            UsersPage--;
+            await UpdateUsers();
+        }
+    }
+    public async void Next()
+    {
+        if (HasNext)
+        {
+            UsersPage++;
+            await UpdateUsers();
+
+        }
+    }
+
+    public void EditUser(string userId)
+    {
+        ModalParameters modalParams = new ModalParameters();
+        modalParams.Add("UserId", userId);
+        SModal.Show<EditUser>(L["Edit user"], modalParams, ViewStorageApp.EditUserModalOptions, EditUserEnd);
+    }
+    public void EditRole(string userId)
+    {
+        ModalParameters modalParams = new ModalParameters();
+        modalParams.Add("UserId", userId);
+        SModal.Show<EditUserRole>(L["Role"], modalParams,ViewStorageApp.EditRoleModalOptions, EditUserEnd);
+    }
+    public void EditProfile(string userId)
+    {
+        ModalParameters modalParams = new ModalParameters();
+        modalParams.Add("UserId", userId);
+        SModal.Show<EditProfile>(L["Profile"], modalParams, ViewStorageApp.EditProfileModalOptions, EditProfileEnd);
+    }
+
+    public async void EditUserEnd(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+            await UpdateUsers();
+        }
+    }
+
+    async void EditProfileEnd(ModalResult result)
+    {
+        if (!result.Cancelled)
+        {
+            await UpdateUsers();
+        }
+    }
+
+
+    protected async override void OnInitialized()
+    {
+        TotalPages = SUsers.GetTotalPagesUsers();
+        await UpdateUsers();
+    }
+    void DeleteUser(YourSpace.Areas.Identity.MIdentityUser user)
+    {
+        ModalParameters modalParameters = new ModalParameters();
+        modalParameters.Add("User", user);
+        modalParameters.Add("Message", $"{L["Delete user"]} {user.FirstName} {user.Email}");
+        SModal.Show<YouAreSure>("?", modalParameters, DeleteUserEnd);
+
+    }
+
+    async void DeleteUserEnd(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+            YourSpace.Areas.Identity.MIdentityUser user =
+                ((ModalParameters)result.Data).Get<YourSpace.Areas.Identity.MIdentityUser>("User");
+            await SModeration.DeleteUser(user.Id);
+            await UpdateUsers();
+        }
+    }
+
+    async Task UpdateUsers()
+    {
+        UsersList = await SUsers.GetUsers(UsersPage, _filter);
+        StateHasChanged();
+    }
+    async void SearchBtn()
+    {
+        await UpdateUsers();
+    }
+
+    void CreateUser()
+    {
+        SModal.Show<CreateUser>(L["New user"],new ModalParameters(),ViewStorageApp.CreateUserModalOptions, CreatedUser);
+    }
+    async void CreatedUser(ModalResult result)
+    {
+        if (!result.Cancelled)
+        {
+            await UpdateUsers();
+        }
+    }
+}

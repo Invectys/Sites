@@ -1,0 +1,27 @@
+﻿@inject YourSpace.Services.ISModal SModal
+@inject IStringLocalizer<EditPageModerationInfoDisplay> L
+<div class="icon icon-red-settings cursor-pointer" @onclick="OpenEditPage"></div>
+
+
+@code {
+
+    [Parameter] public string EditPageName { get; set; }
+    [Parameter] public string Class { get; set; }
+
+    void OpenEditPage()
+    {
+        ModalParameters parameters = new ModalParameters();
+        parameters.Add("EditPageName", EditPageName);
+        SModal.Show<EditPageInfoModeration>(L["Moderation page"], parameters,ViewStorageApp.EditPageModalOptions, PageEdited);
+    }
+
+    void PageEdited(ModalResult result)
+    {
+
+    }
+
+   
+
+
+
+}

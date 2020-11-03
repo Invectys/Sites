@@ -1,0 +1,93 @@
+﻿@inherits CModalTemplete
+@inject YourSpace.Services.ISBlocksAllow SBlocksAllow
+
+
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    @foreach (var g in _groupsBlock)
+    {
+        <li class="nav-item">
+            <a class="nav-link blocks-group-tab-link" id="pills-@g.Key.ToString()-tab" data-toggle="pill" href="#pills-@g.Key.ToString()" role="tab"
+                aria-controls="pills-@g.Key.ToString()" aria-selected="false">@GetCategorieName(g.Key)</a>
+        </li>
+    }
+</ul>
+<div class="tab-content pt-2 pl-1" id="pills-tabContent">
+    @foreach (var g in _groupsBlock)
+    {
+        bool bShow = g.Key == BlockCategories.Social;
+        <div class="tab-pane fade @(bShow ? "show active" : "")" id="pills-@g.Key.ToString()" role="tabpanel" aria-labelledby="pills-@g.Key.ToString()-tab">
+            <div class="blocks-gallery blocks-columns">
+                @foreach (var b in g)
+                {
+                    @RenderBlock(b);
+                }
+            </div>
+        </div>
+    }
+
+</div>
+
+
+@code
+{
+    [Parameter] public List<MPageBlock> BlocksList { get; set; }
+    [Inject] protected IStringLocalizer<SelectBlock> L { get; set; }
+    [Inject] public IJSRuntime JSRuntime { get; set; }
+
+    private IEnumerable<IGrouping<BlockCategories, MPageBlock>> _groupsBlock;
+
+    private void HandleSelect(Type Block)
+    {
+        ModalParameters.Add("SelectedBlock", Block);
+        Close(ModalResult.OK(ModalParameters));
+    }
+    private RenderFragment RenderBlock(MPageBlock block) => builder =>
+    {
+        builder.OpenComponent(0, block.GetBlazorComponentDisplayType());
+        builder.AddAttribute(1, "OnClick", EventCallback.Factory.Create(this,
+            () => { HandleSelect(block.GetType()); }));
+        builder.CloseComponent();
+    };
+
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        List<MPageBlock> blocksList = ModalParameters.TryGet<List<MPageBlock>>("BlocksList", out bool have);
+        if (have) BlocksList = blocksList;
+        _groupsBlock = BlocksList.GroupBy(b => b.GetCategorie());
+    }
+
+    public static new int GetDefaultModalId() => 1;
+
+    protected string GetCategorieName(BlockCategories categorie)
+    {
+        if (categorie == BlockCategories.Social)
+        {
+            return L["Social"];
+        }
+        else if (categorie == BlockCategories.Marks)
+        {
+            return L["Marks"];
+        }
+        else if (categorie == BlockCategories.Other)
+        {
+            return L["Other"];
+        }
+
+        return default;
+    }
+
+    protected override void OnInitialized()
+    {
+
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        
+       //JSRuntime.InvokeVoidAsync("InitSelectBlockTabs", "blocks-group-tab-link");
+        
+    }
+}

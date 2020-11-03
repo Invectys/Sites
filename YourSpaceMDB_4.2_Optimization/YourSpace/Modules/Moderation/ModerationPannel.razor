@@ -1,0 +1,13 @@
+﻿@inject IStringLocalizer<ModerationPannel> L
+
+<AuthorizeView Roles="Admin">
+    <div class="d-flex bg-primary justify-content-center">
+        <a href="/moderation/users" class="btn btn-danger">@L["Users"]</a>
+        <a href="/moderation/pages" class="btn btn-danger">@L["Pages"]</a>
+        <a href="/moderation/roles" class="btn btn-danger">@L["Roles"]</a>
+    </div>
+</AuthorizeView>
+
+
+
+

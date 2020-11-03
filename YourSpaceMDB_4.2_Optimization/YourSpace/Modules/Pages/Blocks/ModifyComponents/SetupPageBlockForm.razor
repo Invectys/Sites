@@ -1,0 +1,12 @@
+﻿
+
+<EditForm Model="Block">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <SetupPageBlock Block="Block"></SetupPageBlock>
+</EditForm>
+
+@code
+{
+    [Parameter] public MPageBlock Block { get; set; }
+}

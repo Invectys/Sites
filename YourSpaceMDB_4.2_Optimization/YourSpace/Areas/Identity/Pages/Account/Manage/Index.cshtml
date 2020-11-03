@@ -1,0 +1,83 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<div class="">
+
+      
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+          aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+          aria-selected="false">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+          aria-selected="false">Contact</a>
+      </li>
+    </ul>
+      <div class="tab-content" id="myTabContent">
+
+          @*Home Profile*@
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+              <div class="row">
+                  <div class="col col-md-6">
+                      <div class="d-flex flex-column">
+
+                          <img class="img-fluid" src="https://image.freepik.com/free-photo/smiling-young-man-wearing-sunglasses-taking-selfie-showing-thumb-up-gesture_23-2148203116.jpg" />
+
+                          <button class="btn btn-primary w-100">Change</button>
+                      </div>
+                  </div>
+                  <div class="col col-md-6">
+                      <div class="d-flex flex-column">
+                          <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="/" method="post">
+                              <button class="btn btn-danger">
+                                  Logout
+                              </button>
+                          </form>
+                          <form id="profile-form" method="post">
+                              <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                              <div class="form-group">
+                                  <label asp-for="Username"></label>
+                                  <input asp-for="Username" class="form-control" disabled />
+                              </div>
+                              <div class="form-group">
+                                  <label asp-for="Input.PhoneNumber"></label>
+                                  <input asp-for="Input.PhoneNumber" class="form-control" />
+                                  <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                              </div>
+                              <button id="update-profile-button" type="submit" class="btn btn-primary">Save</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+
+          @*Tab Profile*@
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              tab
+          </div>
+
+          @*Tab Contact*@
+          <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+              tab
+          </div>
+
+      </div>
+</div>
+<partial name="_StatusMessage" model="Model.StatusMessage" />
+
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,38 @@
+﻿@inject YourSpace.Services.ISModal SModal
+@inject IStringLocalizer<EditBlockOnPageDisplay> L
+
+<div class="d-flex flex-row justify-content-between position-absolute w-100 bg-transparent-white pt-md-3 px-md-2 pt-sm-0 px-sm-0">
+    <div  class="icon icon-x-red cursor-pointer" @onclick="Delete">
+    </div>
+    <div class="icon icon-edit cursor-pointer" @onclick="Edit">
+    </div>
+</div>
+
+
+
+@code {
+
+    [Parameter] public MPageBlock Block { get; set; }
+    [Parameter] public CPage ComponentPage { get; set; }
+
+    public void Edit()
+    {
+        ComponentPage.HideBtnPannel();
+        ModalParameters modalParameters = new ModalParameters();
+        modalParameters.Add("Block", Block);
+        SModal.Show<EditBlock>(L["Edit"], modalParameters,ViewStorageApp.CreateNewBlockModalOptions, EditClosed);
+    }
+    private void EditClosed(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+            ComponentPage.ShowBtnPannel();
+            Block.ParentGroup.Component.BlockEdited();
+        }
+    }
+
+    public void Delete()
+    {
+        Block.ParentGroup.Component.RemoveBlock(Block);
+    }
+}

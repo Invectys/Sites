@@ -1,0 +1,13 @@
+﻿.vm-forward1{
+
+}
+.vm-forward1 img{
+    width:100%;
+}
+
+@media(max-width: 768px) {
+
+    .text-block {
+        font-size: 20px;
+    }
+}

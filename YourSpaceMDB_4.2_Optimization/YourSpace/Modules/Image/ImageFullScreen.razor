@@ -1,0 +1,24 @@
+﻿@inherits CModalTemplete
+
+<img class="mh-v mw-90vw" src="@Image" @onclick="Close"/>
+
+@code {
+
+    [Parameter] public string Image { get; set; }
+
+    protected override void OnInitialized()
+    {
+        string image = ModalParameters.TryGet<string>("Image", out bool have);
+        if(have)
+        {
+            Image = image;
+        }
+    }
+
+    public static new int GetDefaultModalId() => 3;
+
+    void Close()
+    {
+        Close(ModalResult.OK(""));
+    }
+}

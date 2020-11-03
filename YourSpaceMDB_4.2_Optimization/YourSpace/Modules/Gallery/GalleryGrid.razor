@@ -1,0 +1,22 @@
+﻿<div class="gallery  @Options.ColumnsClass @Options.Class" id="@Options.GalleryId" >
+    @ChildContent
+</div>
+
+@code
+{
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    [Parameter] public GalleryOptions Options { get; set; } = new GalleryOptions();
+    [Inject] protected IJSRuntime JSRuntime { get; set; }
+
+
+    public async Task UpdateGrid()
+    {
+        await JSRuntime.InvokeVoidAsync("InitGallery", Options.GalleryId);
+    }
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await UpdateGrid();
+    }
+
+}

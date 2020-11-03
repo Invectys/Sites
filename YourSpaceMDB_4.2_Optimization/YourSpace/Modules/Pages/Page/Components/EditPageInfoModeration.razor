@@ -1,0 +1,34 @@
+﻿@inherits CModalTemplete
+
+<EditForm Model="_pageInfo" OnValidSubmit="Submit">
+    <DataAnnotationsValidator></DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <MyInputNumber @bind-Value="_pageInfo.MaxBlocks" Label="Max blocks"></MyInputNumber>
+    <MyInputNumber @bind-Value="_pageInfo.MaxDepth" Label="Max groups depth"></MyInputNumber>
+    <MyInputNumber @bind-Value="_pageInfo.MaxMainGroups" Label="Max main groups"></MyInputNumber>
+    <button type="submit" class="btn btn-primary" >Change</button>
+</EditForm>
+
+@code {
+
+    [Inject] protected ISPagesModifier SPagesModifier { get; set; }
+
+    private MPageInfo _pageInfo = new MPageInfo();
+
+
+    protected override void OnInitialized()
+    {
+        string pageName = ModalParameters.Get<string>("EditPageName");
+        _pageInfo = SPagesModifier.GetPageInfo(pageName);
+    }
+
+    void Submit()
+    {
+        SPagesModifier.SetPageInfo(_pageInfo);
+        Close(ModalResult.OK(""));
+    }
+
+
+    public static new int GetDefaultModalId() => 1;
+
+}

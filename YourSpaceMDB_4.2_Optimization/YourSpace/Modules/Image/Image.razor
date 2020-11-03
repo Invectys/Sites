@@ -1,0 +1,25 @@
+﻿
+<img src="@src" class="@Class" @onclick="ShowFullScreen"/>
+
+
+@code {
+
+    [Parameter] public string src { get; set; }
+    [Parameter] public string Class { get; set; }
+    [Parameter] public bool FullScreenEnabled { get; set; } = true;
+    [Inject] protected ISModal SModal { get; set; }
+
+    void ShowFullScreen()
+    {
+        //if(FullScreenEnabled)
+        //{
+        //    var p = new ModalParameters();
+        //    p.Add("Image", src);
+        //    var o = new ModalOptions();
+        //    o.HideHeader = true;
+        //    o.Style = "none";
+        //    SModal.Show<ImageFullScreen>("Image", p, o, null);
+        //}
+
+    }
+}

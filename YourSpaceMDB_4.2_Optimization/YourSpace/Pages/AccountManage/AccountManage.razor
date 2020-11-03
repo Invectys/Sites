@@ -1,0 +1,198 @@
+﻿@page "/account/{UserName}"
+@inject IStringLocalizer<AccountManage> L
+
+
+
+
+@if(Valid)
+{
+    <div class="col-sm-12 col-md-9 mx-auto">
+
+      
+        <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="pages-tab" data-toggle="tab" href="#pages" role="tab" aria-controls="pages"
+                   aria-selected="true">@L["Pages"]</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                   aria-selected="false">@L["Home"]</a>
+            </li>
+            @if(IsOwner)
+            {
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                   aria-selected="false">@L["Profile"]</a>
+            </li>
+            }
+        
+        </ul>
+          <div class="tab-content" id="myTabContent">
+
+              @*Home Profile*@
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                  <div class="row">
+                      <div class="col-sm-12 col-md-7 px-0">
+                          <div class="d-flex flex-column">
+                              <div class="d-flex justify-content-center overflow-hidden">
+                                <Image Class="account-avatar" src="@ProfileImage"></Image>
+                              </div>
+                              @if(IsOwner)
+                              {
+                                <button class="btn btn-primary " @onclick="ChangeProfilePhoto">@L["Change"]</button>
+
+                              }
+                          </div>
+                      </div>
+                      <div class="col px-0">
+                          <div class="d-flex flex-column">
+                              @if(IsOwner)
+                              {
+                              <a href="Identity/Account/Logout" class="btn btn-danger">@L["Logout"]</a>
+                              }
+                         
+
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+
+              @*Tab Pages*@
+              <div class="tab-pane fade" id="pages" role="tabpanel" aria-labelledby="pages-tab">
+                  <div class="row">
+                      @if(_canCreatePage && IsOwner)
+                      {
+                        <CreateNewPageDisplay Class="btn btn-primary btn-lg align-self-center w-100" PageCreated="PageCreated">@L["Create page"]</CreateNewPageDisplay>
+                      }
+                      <PagesList Pages="list" ShowEditPage="ShowEditPage" onPageDeleted="UpdateCanCreatePage"></PagesList>
+                  </div>
+              </div>
+
+              @*Tab Profile*@
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                  <section class="dark-grey-text">
+                    <br/>
+                    <div class="row justify-content-center">
+                        <div class="d-flex flex-column">
+                            @if(IsOwner)
+                            {
+                                <button class="btn btn-primary flex-fill" @onclick="DownloadData">@L["Download personal data"]</button>
+                                <a class="btn btn-danger flex-fill" href="Identity/Account/DeleteAccount">@L["Delete account"]</a>
+                            }
+                        </div>
+                    </div>
+                  </section>
+
+              </div>
+
+
+          </div>
+          <div class="my-4"></div>
+          <div class="my-4"></div>
+
+    </div>
+}
+else
+{
+    <Loading></Loading>
+}
+
+
+@code {
+
+    public bool ShowEditPage { get { return IsOwner; } }
+
+    [Parameter] public string UserName { get; set; }
+    public string ProfileImage { get; set; }
+
+    private bool _canCreatePage = false;
+
+
+
+    public bool Valid { get; set; } = false;
+    public bool IsOwner { get; set; }
+
+    public List<MPageInfo> list = new List<MPageInfo>();
+
+    [Inject] protected NavigationManager Navigation { get; set; }
+    [Inject] protected ISModal SModal { get; set; }
+    [Inject] protected ISUserProfile SProfile { get; set; }
+    [Inject] protected ISFileSave SFileSave { get; set; }
+    [Inject] protected ISPages SPages { get; set; }
+
+    [CascadingParameter] protected Task<AuthenticationState> Auth { get; set; }
+
+    void ChangeProfilePhoto()
+    {
+        if (IsOwner)
+        {
+            SModal.Show<SelectImageGallery>(L["Profile Image"],new ModalParameters(),ViewStorageApp.SelectImageModalOpt, Selected);
+        }
+    }
+
+
+
+    async void Selected(ModalResult result)
+    {
+        if(!result.Cancelled)
+        {
+            var user = (await Auth).User;
+            string path = ((ModalParameters) result.Data).Get<string>("SelectedImage");
+            await SProfile.SetUserProfileImage(user, path);
+            ProfileImage = path;
+            StateHasChanged();
+        }
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await Auth).User;
+        var mUser = await SProfile.GetUser(UserName);
+
+        if (mUser != null)
+        {
+            Valid = true;
+            ProfileImage = SProfile.GetUserProfileImage(mUser);
+            IsOwner = user.Identity.IsAuthenticated ? user.Identity.Name == UserName : false;
+            list = await SPages.GetUserPages(UserName);
+
+            if(IsOwner)
+            {
+                _canCreatePage =  await SProfile.CanCreatePage(user);
+            }
+            else
+            {
+                _canCreatePage = false;
+            }
+        }
+
+
+    }
+
+    async void DownloadData()
+    {
+        if(IsOwner)
+        {
+            var user = (await Auth).User;
+            string data = await SProfile.GetPersonalDataZip(user);
+            await SFileSave.SaveAsBase64("YS_PersonalData", data, "application/zip");
+
+        }
+    }
+
+    async Task UpdateCanCreatePage()
+    {
+        var user = (await Auth).User;
+        _canCreatePage = await SProfile.CanCreatePage(user);
+    }
+
+
+    async void PageCreated()
+    {
+        var user = (await Auth).User;
+        _canCreatePage = await SProfile.CanCreatePage(user);
+    }
+
+}

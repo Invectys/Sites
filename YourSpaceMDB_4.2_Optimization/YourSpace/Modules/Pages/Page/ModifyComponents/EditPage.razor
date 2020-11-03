@@ -1,0 +1,54 @@
+﻿@inherits CModalTemplete
+
+@inject YourSpace.Services.ISPagesModifier SPagesModifier
+@inject YourSpace.Services.ISPagesCasher SPagesCasher
+@inject IStringLocalizer<EditPage> L
+
+@if(editPage != null)
+{
+    <EditForm Model="editPage" OnValidSubmit="HandleSubmit">
+            <DataAnnotationsValidator>
+            </DataAnnotationsValidator>
+            <ValidationSummary>
+            </ValidationSummary>
+            @InfoMessage
+
+            <SetupPageBlock Block="editPage.DisplayBlock"></SetupPageBlock>
+            <button type="submit" class="btn btn-primary w-100 ">@L["Continue"]</button>
+    </EditForm>
+}
+
+
+@code {
+
+    public string InfoMessage { get; set; }
+
+
+    [CascadingParameter] public ModalParameters Parameters { get; set; }
+    [Parameter] public MPageCardBlock PageCard { get; set; }
+
+    public MEditPage editPage;
+
+    [CascadingParameter]
+    private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    private async void HandleSubmit()
+    {
+        var user = (await authenticationStateTask).User;
+        MPage page = await SPagesCasher.TryGetPage(PageCard.Name);
+        page.DisplayCard = editPage.DisplayBlock;
+        SPagesCasher.SetPage(page);
+
+        Close(ModalResult.OK(""));
+    }
+
+    protected override void OnInitialized()
+    {
+        if(PageCard == null) PageCard = Parameters.Get<MPageCardBlock>("PageCard");
+        editPage = new MEditPage();
+        editPage.DisplayBlock = PageCard;
+
+    }
+
+    public static new int GetDefaultModalId() => 1;
+}

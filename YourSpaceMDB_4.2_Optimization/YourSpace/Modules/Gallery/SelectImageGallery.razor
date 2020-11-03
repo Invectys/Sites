@@ -1,0 +1,46 @@
+﻿@inherits CGallery
+
+<GalleryTopMenu Gallery="this"></GalleryTopMenu>
+
+@foreach(var g in Groups.Reverse())
+{
+    <br />
+    <div class="d-inline-flex">@(g.Key.ToString("MM:yyyy"))</div>
+    <br />
+    <GalleryGrid Options="GetGalleryOptions(g.Key)">
+        @foreach (var file in g)
+        {
+            <GalleryGridElement>
+                <SelectImageGridElement Image="@file" OnClick="SelectImage"></SelectImageGridElement>
+            </GalleryGridElement>
+        }
+    </GalleryGrid>
+}
+
+
+
+@code {
+
+    public string SelectedImage { get; set; } = "None";
+    public static new int GetDefaultModalId() => 4;
+
+    private GalleryOptions GetGalleryOptions(DateTime date) => new GalleryOptions()
+    { GalleryId = "gallery" + date.ToString("yyyy_MM_dd"), Class= "gallery-hover" };
+
+
+    void SelectImage(MGalleryGridElementClick click)
+    {
+        ModalParameters.Add("SelectedImage", click.Path);
+        Close(ModalResult.OK(ModalParameters));
+    }
+
+    public override void HandleDataType()
+    {
+        _fileType = FileType.Images;
+        _galaryType = GalleryType.User;
+        LoadNewFileTypeComponent = typeof(ImageUpload);
+    }
+
+   
+
+}

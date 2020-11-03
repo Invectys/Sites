@@ -1,0 +1,14 @@
+﻿@inject IStringLocalizer<GalleryTopMenu> L
+
+<GalleryTypeSwitcherDisplay Gallery="Gallery"></GalleryTypeSwitcherDisplay>
+
+@if (Gallery.GalleryType == GalleryType.User)
+{
+    <div class="d-flex">
+        <button @onclick="Gallery.OpenUploadNewFileComponent" class="btn btn-primary flex-fill">@L["Load new"]</button>
+    </div>
+}
+
+@code {
+    [Parameter] public CGallery Gallery { get; set; }
+}

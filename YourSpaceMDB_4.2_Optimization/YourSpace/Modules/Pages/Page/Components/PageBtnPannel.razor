@@ -1,0 +1,12 @@
+﻿<div class="row fixed-bottom flex-fill bg-white justify-content-center pb-5 order-1 @Class" >
+    <a href="@Url">
+        <div class="btn btn-primary">@Name</div>
+    </a>
+</div>
+
+
+@code {
+    [Parameter] public string Name { get; set; }
+    [Parameter] public string Url { get; set; }
+    [Parameter] public string Class { get; set; }
+}

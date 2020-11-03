@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<MIdentityUser> SignInManager
+@inject UserManager<MIdentityUser> UserManager
+@inject Microsoft.Extensions.Localization.IStringLocalizer<YourSpace.Areas.Identity.Pages.Shared._LoginPartial> L
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <a class="p-2 text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@User.Identity.Name!</a>
+    
+}
+else
+{
+    <a class="p-2 text-dark" asp-area="Identity" asp-page="/Account/Register">@L["Register"]</a>
+    <a class="p-2 text-dark" asp-area="Identity" asp-page="/Account/Login">@L["Login"]</a>
+}
+

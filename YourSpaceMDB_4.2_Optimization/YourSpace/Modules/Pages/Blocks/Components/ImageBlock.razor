@@ -1,0 +1,11 @@
+﻿@using YourSpace.Modules.Pages.Blocks
+@inherits CPageBlock
+
+<div class="">
+    <Image Class="" src="@Model().ImagePath"></Image>
+</div>
+
+@functions
+{
+    MImageBlock Model() => (Block as MImageBlock);
+}

@@ -1,0 +1,65 @@
+﻿@inherits CPageBlock
+
+
+<!--Grid column-->
+  <div class="col-md-6 mb-4">
+
+    <!-- Card -->
+    <div class="card gradient-card">
+
+        <div class="card-image" style="background-image: url(@ImagePath);">
+
+          <!-- Content -->
+          <a href="/@Model.Name" class="text-primary">
+            <div class="text-white d-flex h-100 mask aqua-gradient-rgba">
+              <div class="first-content align-self-center p-3">
+                <h3 class="card-title">@Model.Title</h3>
+                <p class="lead mb-0">Click on this card to see details</p>
+              </div>
+              <div class="second-content  align-self-center mx-auto text-center">
+                <i class="fas fa-chart-line fa-3x">page</i>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Data -->
+        <div class="third-content  ml-auto mr-4 mb-2">
+          <p class="text-uppercase text-muted">@Model.Title</p>
+        </div>
+
+        <!-- Content -->
+        <div class="card-body white">
+            <h4 class="text-uppercase text-muted my-4">Description</h4>
+            <p class="text-uppercase font-weight-bold" align="justify">@Model.TextDescription</p>
+            @if (Model.ShowEditLink)
+            {
+                <a href="/@Model.Name"><button type="button" class="btn btn-primary">Edit page</button></a>
+                <EditPageDisplay EditPageName="@Model.Name" Changed="Update"></EditPageDisplay>
+            }
+        </div>
+
+    </div>
+    <!-- Card -->
+
+  </div>
+  <!--Grid column-->
+
+
+
+
+
+
+@code
+{
+    public string ImagePath { get { return "../" + Model.ImageBackground.Replace('\\', '/'); } }
+
+    [Parameter] public MPageCardBlock Model { get; set; }
+    [Parameter] public string Class { get; set; }
+
+    void Update()
+    {
+        StateHasChanged();
+    }
+}

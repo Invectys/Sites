@@ -1,0 +1,77 @@
+﻿@page "/{**path}"
+@namespace YourSpace.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YourSpace</title>
+    <base href="~/" />
+
+    <!-- custom styles -->
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/view-mode.css" rel="stylesheet" />
+    <link href="~/css/icons.css" rel="stylesheet" />
+    <link href="~/css/loading.css" rel="stylesheet" />
+    <link href="~/css/app-tabs.css" rel="stylesheet" />
+    <link href="~/404/404.css" rel="stylesheet" />
+
+    <!-- Modal window -->
+    <link href="~/css/blazored-modal.css" rel="stylesheet" />
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="~/dist/css/mdb.min.css" rel="stylesheet">
+
+    <!-- gallery-->
+    <link href="~/Gallery/gallery.css" rel="stylesheet" />
+
+    <!-- audio -->
+    <link href="~/audio-player/audioplayer.css" rel="stylesheet" />
+</head>
+<body>
+    <app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+    <script src="_content/BlazorInputFile/inputfile.js"></script>
+    <script src="~/dist/js/FileSaveBlazor.min.js"></script>
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="~/dist/js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="~/dist/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="~/dist/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="~/dist/js/mdb.min.js"></script>
+
+    <!-- gallery -->
+    <script src="~/Gallery/gallery.js"></script>
+
+    <script src="~/dist/js/site.js"></script>
+
+    <!-- audio player -->
+    <script src="~/audio-player/audioplayer.js"></script>
+</body>
+</html>

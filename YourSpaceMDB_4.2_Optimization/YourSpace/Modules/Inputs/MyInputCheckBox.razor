@@ -1,0 +1,27 @@
+﻿@inherits InputBase<bool>
+
+<div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="defaultUnchecked" @bind="CurrentValueAsString" value="@CurrentValueAsString">
+    <label class="custom-control-label" for="defaultUnchecked">@Label</label>
+</div>
+
+
+
+@code
+{
+    [Parameter] public string Label { get; set; }
+
+
+    protected override string FormatValueAsString(bool value)
+    {
+        return value.ToString() ;
+    }
+
+    protected override bool TryParseValueFromString(string value, out bool result, out string validationErrorMessage)
+    {
+        bool b = bool.Parse(value);
+        result = b;
+        validationErrorMessage = "";
+        return true;
+    }
+}

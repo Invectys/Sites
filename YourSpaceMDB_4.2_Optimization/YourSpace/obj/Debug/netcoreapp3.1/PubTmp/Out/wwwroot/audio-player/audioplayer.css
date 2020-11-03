@@ -1,0 +1,40 @@
+
+.player-icon
+{
+	height: 60px;
+	width: 60px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.player-icon-play
+{
+	background-image: url("play.svg");
+}
+
+.player-icon-pause
+{
+	background-image: url("pause.svg");
+}
+
+.player-bar-main
+{
+	overflow: hidden;
+	width: 100%;
+	height: 20px;
+	background-color: white;
+}
+.audioplayer-state
+{
+	cursor: pointer;
+}
+
+.player-bar
+{
+	height: inherit;
+	background-color: black;
+}
+
+.player-img {
+	height: 5rem !important;
+	width: 5rem !important;
+}
